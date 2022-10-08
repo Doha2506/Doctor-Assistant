@@ -2,7 +2,7 @@
 
 namespace Doctor_Assistant.Models
 {
-    public class ray
+    public class Ray
     {
         public int Id { get; set; }
 
@@ -13,5 +13,11 @@ namespace Doctor_Assistant.Models
         public int doctorId { get; set; }
 
         public string result { get; set; }
+
+
+        public string ImageName { get; set; }
+
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
     }
 }

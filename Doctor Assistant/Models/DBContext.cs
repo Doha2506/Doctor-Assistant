@@ -13,9 +13,9 @@ namespace Doctor_Assistant.Models
 
         public DbSet<department> departments { get; set; }
 
-        public DbSet<patient> patients { get; set; }
+        public DbSet<Patient> patients { get; set; }
 
-        public DbSet<ray> rays { get; set; }
+        public DbSet<Ray> rays { get; set; }
 
         public DbSet<StrokeDisease> strokeDisease { get; set; }
     }

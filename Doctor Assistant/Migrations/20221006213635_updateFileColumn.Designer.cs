@@ -3,6 +3,7 @@ using Doctor_Assistant.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Doctor_Assistant.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20221006213635_updateFileColumn")]
+    partial class updateFileColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,13 +136,13 @@ namespace Doctor_Assistant.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
                     b.Property<bool>("HeartDisease")
                         .HasColumnType("bit");
 
                     b.Property<bool>("Hypertension")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsMale")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsMarried")

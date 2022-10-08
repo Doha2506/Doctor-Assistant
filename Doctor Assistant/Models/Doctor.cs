@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Doctor_Assistant.Models
 {
@@ -14,19 +15,35 @@ namespace Doctor_Assistant.Models
         public int deptID { get; set; }
 
 
-
-
         public void addDoctor(DBContext dbContext, Doctor doctor)
         {
             dbContext.doctors.Add(doctor);
             dbContext.SaveChanges();
         }
-        public string getDoctorNameByEmail(DBContext dbContext, string email, string password)
+
+        public int getDoctorIdByEmail(DBContext dbContext, string email)
         {
-            var doctor = dbContext.doctors.Where(x => x.Email.Equals(email) && x.password.Equals(password)).First();
+            var doctor = dbContext.doctors.Where(x => x.Email.Equals(email)).First();
+            return doctor.Id;
+        }
+
+        public string getDoctorNameById(DBContext dbContext, int? Id)
+        {
+            var doctor = GetDoctorById(dbContext, Id);
             return doctor.Name;
         }
 
-          
+        public string getDoctorDeptById(DBContext dbContext, int? Id)
+        {
+            var doctor = GetDoctorById(dbContext, Id);
+            return new department().getNameById(dbContext, doctor.deptID);
+             
+        }
+        private Doctor GetDoctorById(DBContext dbContext, int? Id)
+        {
+            return dbContext.doctors.Where(x => x.Id.Equals(Id)).First(); 
+        }
+
+
     }
 }

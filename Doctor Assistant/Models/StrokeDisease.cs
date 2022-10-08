@@ -11,7 +11,7 @@ namespace Doctor_Assistant.Models
 
         [ForeignKey("Patient")]
         public int PatientId { get; set; }
-        public int Gender { get; set; }
+        public bool IsMale { get; set; }
         public int Age { get; set; }
         public bool Hypertension { get; set; }
         public bool HeartDisease { get; set; }
@@ -24,6 +24,13 @@ namespace Doctor_Assistant.Models
         public bool Stroke { get; set; }
         public string Result { get; set; }
 
+
+
+        public void addNewStroke(DBContext dbContext, StrokeDisease stroke)
+        {
+            dbContext.strokeDisease.Add(stroke);
+            dbContext.SaveChanges();
+        }
 
     }
 }
