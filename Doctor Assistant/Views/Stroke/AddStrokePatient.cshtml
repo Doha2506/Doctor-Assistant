@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Add Stroke Patient";
+}
+
+@model PatientJoinStrokeDisease
+
+
+
+<style>
+    body {
+        background-color: cornflowerblue;
+    }
+</style>
+
+
+<section class="vh-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">Add Stroke Patient</p>
+
+                                <form class="mx-1 mx-md-4" asp-action="AddStrokePatient" asp-controller="Stroke">
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input asp-for="patient.Name" type="text" class="form-control" placeholder="Name">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input asp-for="patient.Email" type="email" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input asp-for="stroke.Age" type="text" class="form-control" placeholder="Age">
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Work Type -->
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <select class="form-select" asp-for="stroke.WorkType">
+                                                <option selected>Work Type</option>
+                                                <option value="children">Children</option>
+                                                <option value="Govt_jov">Govt_jov</option>
+                                                <option value="Private">Private</option>
+                                                <option value="Self-employed">Self-employed</option>
+                                                <option value="Never_worked">Never Worked</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input asp-for="stroke.AvrGlucoseLevel" type="text" class="form-control" placeholder="Avrerage Glucose Level">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <input asp-for="stroke.BMI" type="text" class="form-control" placeholder="BMI">
+                                        </div>
+                                    </div>
+
+
+                                    <!-- smoking status-->
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <select class="form-select" asp-for="stroke.SmokingStatus">
+                                                <option selected>Smoking Status</option>
+                                                <option value="Formerly Smoked">Formerly Smoked</option>
+                                                <option value="Never Smoked">Never Smoked</option>
+                                                <option value="Smokes">Smokes</option>
+                                                <option value="Unknown">Unknown</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Residence Type -->
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <div class="form-outline flex-fill mb-0">
+                                            <select class="form-select" asp-for="stroke.ResidenceType">
+                                                <option selected>Residence Type</option>
+                                                <option value="false">Rural</option>
+                                                <option value="true">Urban</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <!-- is Male -->
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input me-2" id="isMale" type="checkbox" asp-for="stroke.IsMale">
+                                            <label class="form-check-label" for="isMale"> Is Male ?</label>
+                                        </div>
+
+                                        <!-- is Married -->
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input me-2" type="checkbox" id="isMarried" asp-for="stroke.IsMarried">
+                                            <label class="form-check-label" for="isMale"> Is Married ?</label>
+                                        </div>
+
+                                    </div>
+
+                                    <br />
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <!-- Hypertension -->
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input me-2" type="checkbox" id="Hypertension" asp-for="stroke.Hypertension">
+                                            <label class="form-check-label" for="Hypertension">Hypertension</label>
+                                        </div>
+
+                                        <!-- Heart Disease -->
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input me-2" type="checkbox" id="HeartDisease" asp-for="stroke.HeartDisease">
+                                            <label class="form-check-label" for="HeartDisease">HeartDisease</label>
+                                        </div>
+
+                                    </div>
+                                    <br />
+                                    <button type="submit" class="btn btn-dark btn-lg">Check</button>
+
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="https://1.bp.blogspot.com/-DlmNeP_h30A/XXE0k3Sls5I/AAAAAAAAAR4/iIlCTcyyI9IH32b7CBjKfNbZp5_0_GmIACLcBGAs/s1600/stroke1.jpg"
+                                     class="img-fluid" alt="Sample image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@{
+    if (TempData["loginError"] != null)
+    {
+        <script>
+            alert("@TempData["loginError"]")
+        </script>
+    }
+
+}
+
+

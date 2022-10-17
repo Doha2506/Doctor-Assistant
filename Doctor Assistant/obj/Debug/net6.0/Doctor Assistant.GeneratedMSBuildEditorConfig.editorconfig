@@ -19,36 +19,32 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/AddNewDiagnosisUsingMRI.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGROZXdEaWFnbm9zaXNVc2luZ01SSS5jc2h0bWw=
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXGxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/AddStrokePatient.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRTdHJva2VQYXRpZW50LmNzaHRtbA==
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/ShowBrainDiseases.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFNob3dCcmFpbkRpc2Vhc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/ShowEyeDiseases.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFNob3dFeWVEaXNlYXNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/AddNewDiagnosisUsingMRI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGROZXdEaWFnbm9zaXNVc2luZ01SSS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/ShowBrainDiseases.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93QnJhaW5EaXNlYXNlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Home/ShowEyeDiseases.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93RXllRGlzZWFzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Shared/Error.cshtml]
@@ -61,6 +57,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/AddStrokePatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Ryb2tlXEFkZFN0cm9rZVBhdGllbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/DetailsOfStrokePatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Ryb2tlXERldGFpbHNPZlN0cm9rZVBhdGllbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/EditStrokePatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Ryb2tlXEVkaXRTdHJva2VQYXRpZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/ShowStrokePatients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Ryb2tlXFNob3dTdHJva2VQYXRpZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/_ViewImports.cshtml]

@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewData["Title"] = "Patient Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@model PatientJoinStrokeDisease
+
+@{
+    TempData["strokeId"] = Model.stroke.Id;
+    TempData["patientId"] = Model.stroke.PatientId;
+    TempData["docId"] = Model.stroke.DoctorId;
+}
+
+<style>
+    body {
+        background-color: cornflowerblue;
+    }
+    label{
+        margin-top:7px;
+        margin-bottom:5px;
+        font-weight:bold;
+    }
+
+    
+</style>
+
+
+<section class="vh-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+
+                            <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">Edit Patient</p>
+
+                            <form class="mx-1 mx-md-4" asp-action="EditStrokePatient" asp-controller="Stroke">
+                                
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="name" >Name</label>
+                                        <input type="text" id="name" class="form-control" value="@Model.patient.Name" asp-for="patient.Name" />
+                                    </div>
+
+                                    <div class="col">
+                                         <label for="email" >Email</label>
+                                         <input type="email" id="email" class="form-control" value="@Model.patient.Email" asp-for="patient.Email"  />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="doctorName" >Doctor Name</label>
+                                        <input type="text" id="doctorName" class="form-control" value="@Model.doctor.Name" asp-for="doctor.Name" />
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="doctorEmail" >Doctor Email</label>
+                                        <input type="email" id="doctorEmail" class="form-control" value="@Model.doctor.Email" asp-for="doctor.Email" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Age">Age</label>
+                                        <input type="text" id="Age" class="form-control" value="@Model.stroke.Age" asp-for="stroke.Age" />
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="WorkType">Work Type</label>
+                                        <input type="text" id="WorkType" class="form-control" value="@Model.stroke.WorkType" asp-for="stroke.WorkType"  />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="ResidenceType">Residence Type</label>
+                                        <select id="ResidenceType" class="form-control" asp-for="stroke.ResidenceType">
+                                            @if (Model.stroke.ResidenceType == true)
+                                            {
+                                                <option value="True" selected>Urban</option>
+                                                <option value="False">Rural</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="True">Urban</option>
+                                                <option value="False" selected>Rural</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="SmokingStatus">Smoking Status</label>
+                                        <input type="text" id="SmokingStatus" class="form-control" value="@Model.stroke.SmokingStatus" asp-for="stroke.SmokingStatus" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="BMI">BMI</label>
+                                        <input type="text" id="BMI" class="form-control" value="@Model.stroke.BMI" asp-for="stroke.BMI" />
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="AvrGlucoseLevel">AvrGlucoseLevel</label>
+                                        <input type="text" id="AvrGlucoseLevel" class="form-control" value="@Model.stroke.AvrGlucoseLevel" asp-for="stroke.AvrGlucoseLevel" />
+                                    </div>
+                                </div>
+                             
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="HeartDisease">Has Heart Disease ?</label>
+                                        <select id="HeartDisease" class="form-control" asp-for="stroke.HeartDisease">
+                                            @if (Model.stroke.HeartDisease == true)
+                                            {
+                                                <option value="True" selected>Yes</option>
+                                                <option value="False">No</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="True">Yes</option>
+                                                <option value="False" selected>No</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="Hypertension">Has Hypertension ?</label>
+                                        <select id="Hypertension" class="form-control" asp-for="stroke.Hypertension" >
+                                            @if (Model.stroke.Hypertension == true)
+                                            {
+                                                <option value="True" selected>Yes</option>
+                                                <option value="False">No</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="True">Yes</option>
+                                                <option value="False" selected>No</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Hypertension">Is Male ?</label>
+                                      
+                                        <select id="IsMale" class="form-control" asp-for="stroke.IsMale" >
+                                            @if (Model.stroke.IsMale == true)
+                                            {
+                                                <option value="True" selected >Male</option>
+                                                <option value="False">Female</option>
+                                            }
+                                            else{
+                                                <option value="True">Male</option>
+                                                <option value="False" selected >Female</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="IsMarried">Is Married ?</label>
+                                        <select id="IsMarried" class="form-control" asp-for="stroke.IsMarried">
+                                            @if (Model.stroke.IsMarried == true)
+                                            {
+                                                <option value="True" selected >Yes</option>
+                                                <option value="False">No</option>
+                                            }
+                                            else{
+                                                <option value="True">Yes</option>
+                                                <option value="False" selected >No</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+
+                               <div class="row">
+                                    <div class="col">
+                                        <label for="Stroke">Has Stroke ?</label>
+                                        <select id="Stroke" class="form-control" asp-for="stroke.Stroke">
+                                            @if (Model.stroke.Stroke == true)
+                                            {
+                                                <option value="True" selected >Yes</option>
+                                                <option value="False">No</option>
+                                            }
+                                            else{
+                                                <option value="True">Yes</option>
+                                                <option value="False" selected >No</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                     <div class="col">
+                                        <label for="result">Result</label>
+                                        <textarea id="result" class="form-control" asp-for="stroke.Result" >@Model.stroke.Result </textarea>
+                                    </div>
+                               </div>
+
+                               <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-dark btn-lg">Edit</button>
+                                    </div>
+                               </div>
+                              
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

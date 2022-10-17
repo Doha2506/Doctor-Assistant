@@ -21,6 +21,12 @@ namespace Doctor_Assistant.Models
             dbContext.SaveChanges();
         }
 
+        public void UpdateDoctor(DBContext dbContext, Doctor doctor)
+        {
+            dbContext.doctors.Update(doctor);
+            dbContext.SaveChanges();
+        }
+
         public int getDoctorIdByEmail(DBContext dbContext, string email)
         {
             var doctor = dbContext.doctors.Where(x => x.Email.Equals(email)).First();
@@ -44,6 +50,11 @@ namespace Doctor_Assistant.Models
             return dbContext.doctors.Where(x => x.Id.Equals(Id)).First(); 
         }
 
+        public string getDoctorEmailById(DBContext dbContext, int id)
+        {
+            return dbContext.doctors.Where(x => x.Id.Equals(id)).First().Email;
+        }
+     
 
     }
 }

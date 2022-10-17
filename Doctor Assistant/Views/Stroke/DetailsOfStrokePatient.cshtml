@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "Patient Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@model PatientJoinStrokeDisease
+
+
+<style>
+    body {
+        background-color: cornflowerblue;
+    }
+    label{
+        margin-top:7px;
+        margin-bottom:5px;
+        font-weight:bold;
+
+    }
+
+</style>
+
+
+<section class="vh-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+
+                                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">Details of patient</p>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="name" >Name</label>
+                                        <input type="text" id="name" class="form-control" value="@Model.patient.Name" readonly/>
+                                    </div>
+
+                                    <div class="col">
+                                         <label for="email" >Email</label>
+                                         <input type="email" id="email" class="form-control" value="@Model.patient.Email" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="doctorName" >Doctor Name</label>
+                                        <input type="text" id="doctorName" class="form-control" value="@Model.doctor.Name" readonly/>
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="doctorEmail" >Doctor Email</label>
+                                        <input type="email" id="doctorEmail" class="form-control" value="@Model.doctor.Email" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Age">Age</label>
+                                        <input type="text" id="Age" class="form-control" value="@Model.stroke.Age" readonly />
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="WorkType">Work Type</label>
+                                        <input type="text" id="WorkType" class="form-control" value="@Model.stroke.WorkType" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="ResidenceType">Residence Type</label>
+                                        @if (Model.stroke.ResidenceType == true)
+                                        {
+                                            <input type="text" id="ResidenceType" class="form-control" value="True" readonly />
+                                        }
+                                        else
+                                        {
+                                            <input type="text" id="ResidenceType" class="form-control" value="False" readonly />
+                                        }
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="SmokingStatus">Smoking Status</label>
+                                        <input type="text" id="SmokingStatus" class="form-control" value="@Model.stroke.SmokingStatus" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="BMI">BMI</label>
+                                        <input type="text" id="BMI" class="form-control" value="@Model.stroke.BMI" readonly />
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="AvrGlucoseLevel">AvrGlucoseLevel</label>
+                                        <input type="text" id="AvrGlucoseLevel" class="form-control" value="@Model.stroke.AvrGlucoseLevel" readonly />
+                                    </div>
+                                </div>
+                             
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="HeartDisease">Heart Disease</label>
+                                        @if (Model.stroke.HeartDisease == true)
+                                        {
+                                            <input type="text" id="HeartDisease" class="form-control" value="True" readonly/>
+                                        }
+                                        else
+                                        {
+                                            <input type="text" id="HeartDisease" class="form-control" value="False" readonly />
+                                        }
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="Hypertension">Hypertension</label>
+                                        @if(Model.stroke.Hypertension == true){
+                                            <input type="text" id="Hypertension" class="form-control" value="True" readonly />
+                                        }
+                                        else{
+                                            <input type="text" id="Hypertension" class="form-control" value="False" readonly />
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Hypertension">Is Male ?</label>
+                                        @if (Model.stroke.IsMale == true)
+                                        {
+                                            <input type="text" id="IsMale" class="form-control" value="True" readonly />
+                                        }
+                                        else
+                                        {
+                                            <input type="text" id="IsMale" class="form-control" value="False" readonly />
+                                        }
+                                    </div>
+                                    <div class="col">
+                                        <label for="IsMarried">Is Married ?</label>
+                                        @if (Model.stroke.IsMarried == true)
+                                        {
+                                            <input type="text" id="IsMarried" class="form-control" value="True" readonly />
+                                        }
+                                        else
+                                        {
+                                            <input type="text" id="IsMarried" class="form-control" value="False" readonly />
+                                        }
+                                    </div>
+                                </div>
+
+                               <div class="row">
+                                    <div class="col">
+                                        <label for="Stroke">Has Stroke ?</label>
+                                        @if (Model.stroke.Stroke == true)
+                                        {
+                                            <input type="text" id="Stroke" class="form-control" value="True" readonly />
+                                        }
+                                        else
+                                        {
+                                            <input type="text" id="Stroke" class="form-control" value="False" readonly />
+                                        }
+                                    </div>
+                               </div>
+
+                               <div class="row">
+                                    <div class="col">
+                                        <label for="result">Result</label>
+                                        <textarea id="result" class="form-control" readonly>@Model.stroke.Result </textarea>
+                                    </div>
+
+                                </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

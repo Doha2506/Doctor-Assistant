@@ -2,6 +2,7 @@ using Doctor_Assistant.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Doctor_Assistant.Models;
+using Doctor_Assistant.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 

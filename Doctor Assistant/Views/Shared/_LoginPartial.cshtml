@@ -8,20 +8,23 @@
     @if (@TempData["DoctorName"] != null)
 {
     <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-page="" title="Manage">@TempData["DoctorName"] - @TempData["DoctorDept"]</a>
+            <a class="nav-link text-light" asp-area="" asp-controller="Stroke" asp-action="ShowStrokePatients">Show_Stroke_Patients</a>
     </li>
     <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+        <a class="nav-link text-light" asp-area="" asp-page="" title="Manage">@TempData["DoctorName"] - @TempData["DoctorDept"]</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-light" asp-area="" asp-controller="Doctor" asp-action="Logout">Logout</a>
     </li>
 }
 else
 {
 
     <li class="nav-item">
-        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+        <a class="nav-link text-light" asp-area="" asp-controller="Doctor" asp-action="Register">Register</a>
     </li>
     <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="login">Login</a>
+            <a class="nav-link text-light" asp-area="" asp-controller="Doctor" asp-action="login">Login</a>
         </li>
 }
 </ul>
