@@ -12,11 +12,7 @@ namespace Doctor_Assistant.Controllers
         private DBContext dbContext;
         const string DoctorID = "_DoctorID";
 
-        public DoctorController()
-        {
-
-        }
-
+       
         public DoctorController(ILogger<DoctorController> logger, DBContext dBContext)
         {
             _logger = logger;
@@ -60,14 +56,14 @@ namespace Doctor_Assistant.Controllers
         {
             return View();
         }
-
+        
         public void setTempVariables()
         {
             int? id = @HttpContext.Session.GetInt32("_DoctorID");
             TempData["DoctorName"] = new Doctor().getDoctorNameById(dbContext, id);
             TempData["DoctorDept"] = new Doctor().getDoctorDeptById(dbContext, id);
-
         }
+        
         public void setDoctorId(Doctor doctor)
         {
             var id = new Doctor().getDoctorIdByEmail(dbContext, doctor.Email);
@@ -120,9 +116,61 @@ namespace Doctor_Assistant.Controllers
         {
             TempData["DoctorName"] = null;
             TempData["DoctorDept"] = null;
+            HttpContext.Session.SetInt32(DoctorID, -1);
 
             return RedirectToAction("Index");
         }
+
+        //--------------- Show All Doctors ---------------
+
+        public IActionResult ShowAllDoctors()
+        {
+            setTempVariables();
+            return View(new Doctor().ShowDoctors(dbContext));
+        }
+
+        //------------- Edit Doctor --------------
+
+        public IActionResult EditDoctor(int id)
+        {
+            setTempVariables();
+
+            if(id == @HttpContext.Session.GetInt32("_DoctorID"))
+            {
+                return View(new Doctor().GetDoctorById(dbContext, id));
+            }
+            else
+            {
+                TempData["VaildateDoctor"] = "You can not edit any doctor except yourself";
+                return RedirectToAction("ShowAllDoctors");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult EditDoctor(Doctor doctor)
+        {
+            new Doctor().UpdateDoctor(dbContext, doctor);
+
+            return RedirectToAction("ShowAllDoctors");
+        }
+
+        // ---------------- Delete Doctor ----------------------
+        public IActionResult DeleteDoctor(int id)
+        { 
+            new Doctor().DeleteDoctor(dbContext, id);
+
+            if (id == @HttpContext.Session.GetInt32("_DoctorID"))
+            {
+                Logout();
+                return RedirectToAction("Index","Home");
+            }
+            else
+            {
+                return RedirectToAction("ShowAllDoctors");
+            }
+
+        }
+
 
 
     }

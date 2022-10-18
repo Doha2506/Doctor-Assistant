@@ -8,7 +8,7 @@ namespace Doctor_Assistant.Controllers
     {
         private readonly ILogger<StrokeController> _logger;
         private DBContext dbContext;
-        private DoctorController doctorController = new DoctorController();  
+        //private DoctorController doctorController = new DoctorController();  
 
         public StrokeController(ILogger<StrokeController> logger, DBContext dBContext )
         {
@@ -17,11 +17,18 @@ namespace Doctor_Assistant.Controllers
 
         }
 
+        public void setTempVariables()
+        {
+            int? id = @HttpContext.Session.GetInt32("_DoctorID");
+            TempData["DoctorName"] = new Doctor().getDoctorNameById(dbContext, id);
+            TempData["DoctorDept"] = new Doctor().getDoctorDeptById(dbContext, id);
+        }
+
         // ------------- Add Stroke --------------------
 
         public IActionResult AddStrokePatient()
         {
-            doctorController.setTempVariables();
+            setTempVariables();
             return View();
         }
 
@@ -55,14 +62,14 @@ namespace Doctor_Assistant.Controllers
 
         public IActionResult ShowStrokePatients()
         {
-            doctorController.setTempVariables();
+            setTempVariables();
             return View(new Patient().ShowPatients(dbContext));
         }
 
         // -------------- Details Of Stroke Patient -----------------
         public IActionResult DetailsOfStrokePatient(int id)
         {
-            doctorController.setTempVariables();
+            setTempVariables();
             return View(new Patient().GetPatientDetailsById(dbContext, id));
         }
 
@@ -81,7 +88,7 @@ namespace Doctor_Assistant.Controllers
         public IActionResult EditStrokePatient(int id)
         {
             StrokeDisease StrokeTest = new StrokeDisease().GetPatientTestById(dbContext, id);
-            doctorController.setTempVariables();
+            setTempVariables();
             return View(new Patient().SetPatientDetails(dbContext, StrokeTest));
         }
 
@@ -108,6 +115,8 @@ namespace Doctor_Assistant.Controllers
 
             return PatientJoinStroke.stroke;
         }
+        
+
         private PatientJoinStrokeDisease setEmptyFields(PatientJoinStrokeDisease PatientJoinStroke)
         {
             PatientJoinStroke.stroke.Id = (int)TempData["strokeId"];
@@ -118,7 +127,7 @@ namespace Doctor_Assistant.Controllers
             return PatientJoinStroke;
         }
 
-
+        
 
 
 

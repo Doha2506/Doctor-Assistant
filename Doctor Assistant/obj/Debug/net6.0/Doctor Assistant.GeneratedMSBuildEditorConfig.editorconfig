@@ -19,12 +19,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/EditDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEVkaXREb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXGxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/ShowAllDoctors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFNob3dBbGxEb2N0b3JzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/ضحي/Doctor Assistant/Doctor Assistant/Views/Doctor/ShowBrainDiseases.cshtml]

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Doctor_Assistant.Models.DoctorJoinDepartment>
+
+@{
+    ViewData["Title"] = "Show Doctors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+     body{
+        background-image:url('https://andrearugg.com/wp-content/uploads/2015/06/23_LobbyEast.jpg');
+          background-repeat: no-repeat;
+	      background-size: cover;
+	      background-attachment: fixed;
+     }
+</style>
+
+
+<section class="vh-100">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-5">
+                        <div class="row justify-content-center">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Department</th>
+                                            <th></th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.doctor.Id)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.doctor.Name)
+                                                </td>
+
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.doctor.Email)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.department.Name)
+                                                </td>
+                                                <td>
+                                                    @Html.ActionLink("Edit", "EditDoctor","Doctor", new {  id=item.doctor.Id  }) |
+                                                    @Html.ActionLink("Delete", "DeleteDoctor", "Doctor", new {  id=item.doctor.Id  })
+                                                </td>
+                                            </tr>
+                                        }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@{
+    if(TempData["VaildateDoctor"] != null){
+        <script>
+            alert("@TempData["VaildateDoctor"]")
+        </script>
+    }
+
+}
+
+
+
