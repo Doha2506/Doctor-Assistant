@@ -13,6 +13,34 @@
     TempData["docId"] = Model.stroke.DoctorId;
 }
 
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Doctor_Assistant.styles.css" asp-append-version="true" />
+
+<!-- Favicons -->
+<link href="~/img/favicon.png" rel="icon">
+<link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="~/vendor/animate.css/animate.min.css" rel="stylesheet">
+<link href="~/vendor/aos/aos.css" rel="stylesheet">
+<link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="`/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="`/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="~/css/style.css" rel="stylesheet">
+
+
 <style>
     body {
         background-image: url('https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/201504/big-data-medicine-model_0.jpg?itok=SS8arw8X');
@@ -30,16 +58,17 @@
 </style>
 
 
-<section class="vh-100">
-    <div class="container h-100">
+<section class="vh-100" style="margin-top:100px; margin-bottom:-30px;">
+    <div class="container h-100" data-aos="fade-up">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">
                 <div class="card text-black" style="border-radius: 25px;">
                     <div class="card-body p-md-5">
                         <div class="row justify-content-center">
 
-                            <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">Edit Patient</p>
-
+                            <div style="margin-left:650px;">
+                                <h3>Edit Patient @Model.patient.Name</h3>
+                            </div>
                             <form class="mx-1 mx-md-4" asp-action="EditStrokePatient" asp-controller="Stroke">
                                 
                                 <div class="row">
@@ -76,6 +105,11 @@
                                         <label for="WorkType">Work Type</label>
                                         <input type="text" id="WorkType" class="form-control" value="@Model.stroke.WorkType" asp-for="stroke.WorkType"  />
                                     </div>
+
+                                    <div class="col">
+                                        <label for="SmokingStatus">Smoking Status</label>
+                                        <input type="text" id="SmokingStatus" class="form-control" value="@Model.stroke.SmokingStatus" asp-for="stroke.SmokingStatus" />
+                                    </div>
                                 </div>
 
                                 <div class="row">
@@ -95,13 +129,6 @@
                                         </select>
                                     </div>
 
-                                    <div class="col">
-                                        <label for="SmokingStatus">Smoking Status</label>
-                                        <input type="text" id="SmokingStatus" class="form-control" value="@Model.stroke.SmokingStatus" asp-for="stroke.SmokingStatus" />
-                                    </div>
-                                </div>
-
-                                <div class="row">
                                     <div class="col">
                                         <label for="BMI">BMI</label>
                                         <input type="text" id="BMI" class="form-control" value="@Model.stroke.BMI" asp-for="stroke.BMI" />
@@ -145,56 +172,60 @@
                                             }
                                         </select>
                                     </div>
-                                </div>
 
-                                <div class="row">
                                     <div class="col">
                                         <label for="Hypertension">Is Male ?</label>
-                                      
-                                        <select id="IsMale" class="form-control" asp-for="stroke.IsMale" >
+
+                                        <select id="IsMale" class="form-control" asp-for="stroke.IsMale">
                                             @if (Model.stroke.IsMale == true)
                                             {
-                                                <option value="True" selected >Male</option>
+                                                <option value="True" selected>Male</option>
                                                 <option value="False">Female</option>
                                             }
-                                            else{
+                                            else
+                                            {
                                                 <option value="True">Male</option>
-                                                <option value="False" selected >Female</option>
+                                                <option value="False" selected>Female</option>
                                             }
                                         </select>
                                     </div>
+
                                     <div class="col">
                                         <label for="IsMarried">Is Married ?</label>
                                         <select id="IsMarried" class="form-control" asp-for="stroke.IsMarried">
                                             @if (Model.stroke.IsMarried == true)
                                             {
-                                                <option value="True" selected >Yes</option>
+                                                <option value="True" selected>Yes</option>
                                                 <option value="False">No</option>
                                             }
-                                            else{
+                                            else
+                                            {
                                                 <option value="True">Yes</option>
-                                                <option value="False" selected >No</option>
+                                                <option value="False" selected>No</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="Stroke">Has Stroke ?</label>
+                                        <select id="Stroke" class="form-control" asp-for="stroke.Stroke">
+                                            @if (Model.stroke.Stroke == true)
+                                            {
+                                                <option value="True" selected>Yes</option>
+                                                <option value="False">No</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="True">Yes</option>
+                                                <option value="False" selected>No</option>
                                             }
                                         </select>
                                     </div>
                                 </div>
 
                                <div class="row">
-                                    <div class="col">
-                                        <label for="Stroke">Has Stroke ?</label>
-                                        <select id="Stroke" class="form-control" asp-for="stroke.Stroke">
-                                            @if (Model.stroke.Stroke == true)
-                                            {
-                                                <option value="True" selected >Yes</option>
-                                                <option value="False">No</option>
-                                            }
-                                            else{
-                                                <option value="True">Yes</option>
-                                                <option value="False" selected >No</option>
-                                            }
-                                        </select>
-                                    </div>
-
                                      <div class="col">
                                         <label for="result">Result</label>
                                         <textarea id="result" class="form-control" asp-for="stroke.Result" >@Model.stroke.Result </textarea>
@@ -202,7 +233,7 @@
                                </div>
 
                                <div class="row">
-                                    <div class="col">
+                                    <div class="col" style="margin-top:10px;">
                                         <button type="submit" class="btn btn-dark btn-lg">Edit</button>
                                     </div>
                                </div>
@@ -217,3 +248,16 @@
 </section>
 
 
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+<script src="~/js/main.js"></script>
+
+<script src="~/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="~/vendor/aos/aos.js"></script>
+<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="~/vendor/php-email-form/validate.js"></script>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj": {}
+    "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj": {}
   },
   "projects": {
-    "E:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj": {
+    "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj",
+        "projectUniqueName": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj",
         "projectName": "Doctor Assistant",
-        "projectPath": "E:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj",
+        "projectPath": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\Doctor Assistant.csproj",
         "packagesPath": "C:\\Users\\ali\\.nuget\\packages\\",
-        "outputPath": "E:\\ضحي\\Doctor Assistant\\Doctor Assistant\\obj\\",
+        "outputPath": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -66,7 +66,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.12, )"
             }
           },
           "imports": [
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

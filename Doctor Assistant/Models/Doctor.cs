@@ -7,7 +7,7 @@ namespace Doctor_Assistant.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string  Email { get; set; }
+        public string Email { get; set; }
 
         public string password { get; set; }
 
@@ -15,7 +15,7 @@ namespace Doctor_Assistant.Models
         public int deptID { get; set; }
 
 
-        public void addDoctor(DBContext dbContext, Doctor doctor)
+        public void AddDoctor(DBContext dbContext, Doctor doctor)
         {
             dbContext.doctors.Add(doctor);
             dbContext.SaveChanges();
@@ -33,30 +33,30 @@ namespace Doctor_Assistant.Models
             dbContext.SaveChanges();
         }
 
-        public int getDoctorIdByEmail(DBContext dbContext, string email)
+        public int GetDoctorIdByEmail(DBContext dbContext, string email)
         {
             var doctor = dbContext.doctors.Where(x => x.Email.Equals(email)).First();
             return doctor.Id;
         }
 
-        public string getDoctorNameById(DBContext dbContext, int? Id)
+        public string GetDoctorNameById(DBContext dbContext, int? Id)
         {
             var doctor = GetDoctorById(dbContext, Id);
             return doctor.Name;
         }
 
-        public string getDoctorDeptById(DBContext dbContext, int? Id)
+        public string GetDoctorDeptById(DBContext dbContext, int? Id)
         {
             var doctor = GetDoctorById(dbContext, Id);
             return new Department().getNameById(dbContext, doctor.deptID);
-             
+
         }
         public Doctor GetDoctorById(DBContext dbContext, int? Id)
         {
-            return dbContext.doctors.Where(x => x.Id.Equals(Id)).First(); 
+            return dbContext.doctors.Where(x => x.Id.Equals(Id)).First();
         }
 
-        public string getDoctorEmailById(DBContext dbContext, int id)
+        public string GetDoctorEmailById(DBContext dbContext, int id)
         {
             return dbContext.doctors.Where(x => x.Id.Equals(id)).First().Email;
         }
@@ -65,7 +65,7 @@ namespace Doctor_Assistant.Models
         {
             return dbContext.doctors.ToList();
         }
-       
+
         public IEnumerable<DoctorJoinDepartment> ShowDoctors(DBContext dbContext)
         {
             return FillDoctorsList(dbContext);
@@ -102,6 +102,8 @@ namespace Doctor_Assistant.Models
 
             return DoctorDepartment;
         }
+
+
 
     }
 }

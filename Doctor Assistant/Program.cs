@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Doctor_Assistant.Models;
 using Doctor_Assistant.Controllers;
+using Doctor_Assistant.Interfaces;
+using Doctor_Assistant.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var connectionString2 = builder.Configuration.GetConnectionString("Connection");
 builder.Services.AddDbContext<DBContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString2));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -21,6 +23,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IDoctorServices, DoctorServices>();
+
+builder.Services.AddScoped<IPatientServices, PatientServices>();
 
 builder.Services.AddSession(options =>
 {

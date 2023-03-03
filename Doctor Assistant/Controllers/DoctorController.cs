@@ -1,3 +1,4 @@
+using Doctor_Assistant.Interfaces;
 using Doctor_Assistant.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -12,7 +13,8 @@ namespace Doctor_Assistant.Controllers
         private DBContext dbContext;
         const string DoctorID = "_DoctorID";
 
-       
+        public object ScriptManager { get; private set; }
+
         public DoctorController(ILogger<DoctorController> logger, DBContext dBContext)
         {
             _logger = logger;
@@ -31,7 +33,8 @@ namespace Doctor_Assistant.Controllers
         {
             if (!IsEmailExists(doctor))
             {
-                new Doctor().addDoctor(dbContext, doctor);
+                new Doctor().AddDoctor(dbContext, doctor);
+                //_DoctorServices.AddDoctor(dbContext, doctor);
                 return RedirectToAction("login");
             }
             else
@@ -57,16 +60,26 @@ namespace Doctor_Assistant.Controllers
             return View();
         }
         
-        public void setTempVariables()
+        public bool setTempVariables()
         {
             int? id = @HttpContext.Session.GetInt32("_DoctorID");
-            TempData["DoctorName"] = new Doctor().getDoctorNameById(dbContext, id);
-            TempData["DoctorDept"] = new Doctor().getDoctorDeptById(dbContext, id);
+            if (id != null)
+            {
+                TempData["DoctorName"] = new Doctor().GetDoctorNameById(dbContext, id);
+                TempData["DoctorDept"] = new Doctor().GetDoctorDeptById(dbContext, id);
+                TempData["DoctorId"] = id.ToString();
+                TempData["DoctorId"] = id.ToString();
+
+                return true;
+            }
+            else
+                return false;
         }
-        
+
         public void setDoctorId(Doctor doctor)
         {
-            var id = new Doctor().getDoctorIdByEmail(dbContext, doctor.Email);
+            var id = new Doctor().GetDoctorIdByEmail(dbContext, doctor.Email);
+
             HttpContext.Session.SetInt32(DoctorID, id);
         }
 
@@ -77,11 +90,11 @@ namespace Doctor_Assistant.Controllers
             {
                 setDoctorId(doctor);
                 setTempVariables();
-                return RedirectToAction("ViewDepartmentDiseases");
+                return RedirectToAction("Services", "Home");
             }
             else
             {
-                TempData["loginError"] = "Email or Password is wrong !!";
+                TempData["loginError"] = "Email or Password is wrong :(";
                 return RedirectToAction("login");
             }
         }
@@ -101,32 +114,28 @@ namespace Doctor_Assistant.Controllers
                 return RedirectToAction("login");
             }
         }
-        public IActionResult ShowBrainDiseases()
-        {
-            return View();
-        }
-        public IActionResult ShowEyeDiseases()
-        {
-            return View();
-        }
-
+     
         // ------------ Logout -----------------
 
         public IActionResult Logout()
         {
             TempData["DoctorName"] = null;
             TempData["DoctorDept"] = null;
+            TempData["DoctorId"] = null;
             HttpContext.Session.SetInt32(DoctorID, -1);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         //--------------- Show All Doctors ---------------
 
         public IActionResult ShowAllDoctors()
         {
-            setTempVariables();
-            return View(new Doctor().ShowDoctors(dbContext));
+            if (setTempVariables())
+                return View(new Doctor().ShowDoctors(dbContext));
+            else
+                return RedirectToAction("login", "Doctor"); 
+
         }
 
         //------------- Edit Doctor --------------
@@ -138,10 +147,11 @@ namespace Doctor_Assistant.Controllers
             if(id == @HttpContext.Session.GetInt32("_DoctorID"))
             {
                 return View(new Doctor().GetDoctorById(dbContext, id));
+
             }
             else
             {
-                TempData["VaildateDoctor"] = "You can not edit any doctor except yourself";
+                TempData["VaildateDoctor"] = "You can not edit any doctor except yourself :(";
                 return RedirectToAction("ShowAllDoctors");
             }
         }
@@ -170,8 +180,6 @@ namespace Doctor_Assistant.Controllers
             }
 
         }
-
-
 
     }
 }

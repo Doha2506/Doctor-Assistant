@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Doctor_Assistant.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Doctor_Assistant.Models
 {
@@ -22,7 +24,7 @@ namespace Doctor_Assistant.Models
             dbContext.SaveChanges();
         }
 
-        public void UpdatePatient(DBContext dbContext,Patient patient)
+        public void UpdatePatient(DBContext dbContext, Patient patient)
         {
             dbContext.patients.Update(patient);
             dbContext.SaveChanges();
@@ -41,7 +43,7 @@ namespace Doctor_Assistant.Models
 
         }
 
-        private string getPatientNameById(DBContext dbContext,int id)
+        private string getPatientNameById(DBContext dbContext, int id)
         {
             return dbContext.patients.Where(x => x.Id.Equals(id)).First().Name;
         }
@@ -77,6 +79,8 @@ namespace Doctor_Assistant.Models
 
         public PatientJoinStrokeDisease SetPatientDetails(DBContext dbContext, StrokeDisease StrokeTest)
         {
+
+
             PatientJoinStrokeDisease StrokePatient = new PatientJoinStrokeDisease
             {
                 patient = new Patient(),
@@ -89,9 +93,11 @@ namespace Doctor_Assistant.Models
 
             StrokePatient.patient.Email = getPatientEmailById(dbContext, StrokeTest.PatientId);
 
-            StrokePatient.doctor.Name = new Doctor().getDoctorNameById(dbContext, StrokeTest.DoctorId);
+            StrokePatient.doctor.Id = StrokeTest.DoctorId;
 
-            StrokePatient.doctor.Email = new Doctor().getDoctorEmailById(dbContext, StrokeTest.DoctorId);
+            StrokePatient.doctor.Name = new Doctor().GetDoctorNameById(dbContext, StrokeTest.DoctorId);
+
+            StrokePatient.doctor.Email = new Doctor().GetDoctorEmailById(dbContext, StrokeTest.DoctorId);
 
             return StrokePatient;
         }
@@ -99,19 +105,19 @@ namespace Doctor_Assistant.Models
 
         public IEnumerable<PatientJoinStrokeDisease> ShowPatients(DBContext dbContext)
         {
+           
             return FillPatientsList(dbContext);
         }
 
-        public PatientJoinStrokeDisease GetPatientDetailsById(DBContext dbContext ,int id)
+        public PatientJoinStrokeDisease GetPatientDetailsById(DBContext dbContext, int id)
         {
+
             var PatientTest = new StrokeDisease().GetPatientTestById(dbContext, id);
 
             var PatientDetails = SetPatientDetails(dbContext, PatientTest);
 
             return PatientDetails;
         }
-
-
 
     }
 }

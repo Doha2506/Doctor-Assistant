@@ -24,8 +24,6 @@ namespace Doctor_Assistant.Models
         public bool Stroke { get; set; }
         public string Result { get; set; }
 
-
-
         public void AddNewStroke(DBContext dbContext, StrokeDisease stroke)
         {
             dbContext.strokeDisease.Add(stroke);
@@ -54,6 +52,7 @@ namespace Doctor_Assistant.Models
 
         public StrokeDisease GetPatientTestById(DBContext dbContext, int id)
         {
+
             return dbContext.strokeDisease.Where(x => x.Id.Equals(id)).First();
         }
     }

@@ -3,42 +3,29 @@
 @inject UserManager<IdentityUser> UserManager
 
 
-<ul class="navbar-nav">
+<ul>
     @if (@TempData["DoctorName"] != null)
     {
-        <li class="nav-item text-light dropdown">
-            <a class="btn btn-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Services
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                    <a class="dropdown-item" asp-controller="Stroke" asp-action="ShowStrokePatients">Show Stroke Patients</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" asp-controller="Doctor" asp-action="ShowAllDoctors">Show All Doctors</a>
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li>
-                    <a class="dropdown-item" asp-controller="Doctor" asp-action="Logout">Logout</a>
-                </li>
-
-            </ul>
+        <li>
+            <a class="nav-link scrollto" style="font-size:medium;"
+           asp-area="" asp-controller="Doctor" asp-action="Logout">Logout</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-light" title="Manage">@TempData["DoctorName"] - @TempData["DoctorDept"]</a>
+        <li >
+            <a class="nav-link scrollto" style="font-size:medium;" 
+                title="Manage">@TempData["DoctorName"] - @TempData["DoctorDept"]</a>
         </li>
     }
     else
     {
-        <li class="nav-item">
-            <a class="nav-link text-light" asp-controller="Doctor" asp-action="Register">Register</a>
+        <li >
+            <a class="nav-link scrollto" style="font-size:medium;"
+                asp-area="" asp-controller="Doctor" asp-action="Register">Register</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-light" asp-controller="Doctor" asp-action="login">Login</a>
+        <li >
+            <a class="nav-link scrollto" style="font-size:medium;"
+           asp-area="" asp-controller="Doctor" asp-action="Login">Login</a>
         </li>
 
         

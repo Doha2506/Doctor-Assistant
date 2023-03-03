@@ -1,0 +1,801 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Doctor Assistant.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Doctor Assistant.bundle.scp.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\css\\ShowAllDiseases.css",
+      "PackagePath": "staticwebassets\\css\\ShowAllDiseases.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\about.jpg",
+      "PackagePath": "staticwebassets\\img\\about.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\img\\apple-touch-icon.png"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\departments-1.jpg",
+      "PackagePath": "staticwebassets\\img\\departments-1.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\departments-2.jpg",
+      "PackagePath": "staticwebassets\\img\\departments-2.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\departments-3.jpg",
+      "PackagePath": "staticwebassets\\img\\departments-3.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\departments-4.jpg",
+      "PackagePath": "staticwebassets\\img\\departments-4.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\departments-5.jpg",
+      "PackagePath": "staticwebassets\\img\\departments-5.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\doctors\\doctors-1.jpg",
+      "PackagePath": "staticwebassets\\img\\doctors\\doctors-1.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\doctors\\doctors-2.jpg",
+      "PackagePath": "staticwebassets\\img\\doctors\\doctors-2.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\doctors\\doctors-3.jpg",
+      "PackagePath": "staticwebassets\\img\\doctors\\doctors-3.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\doctors\\doctors-4.jpg",
+      "PackagePath": "staticwebassets\\img\\doctors\\doctors-4.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\img\\favicon.png"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\features.jpg",
+      "PackagePath": "staticwebassets\\img\\features.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-1.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-1.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-2.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-2.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-3.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-3.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-4.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-4.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-5.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-5.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-6.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-6.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-7.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-7.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\gallery\\gallery-8.jpg",
+      "PackagePath": "staticwebassets\\img\\gallery\\gallery-8.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\slide\\slide-1.jpg",
+      "PackagePath": "staticwebassets\\img\\slide\\slide-1.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\slide\\slide-2.jpg",
+      "PackagePath": "staticwebassets\\img\\slide\\slide-2.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\slide\\slide-3.jpg",
+      "PackagePath": "staticwebassets\\img\\slide\\slide-3.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\testimonials\\testimonials-1.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-1.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\testimonials\\testimonials-2.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-2.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\testimonials\\testimonials-3.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-3.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\testimonials\\testimonials-4.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-4.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\img\\testimonials\\testimonials-5.jpg",
+      "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-5.jpg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\scss\\Readme.txt",
+      "PackagePath": "staticwebassets\\scss\\Readme.txt"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\animate.css\\animate.compat.css",
+      "PackagePath": "staticwebassets\\vendor\\animate.css\\animate.compat.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\animate.css\\animate.css",
+      "PackagePath": "staticwebassets\\vendor\\animate.css\\animate.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\animate.css\\animate.min.css",
+      "PackagePath": "staticwebassets\\vendor\\animate.css\\animate.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\aos\\aos.css",
+      "PackagePath": "staticwebassets\\vendor\\aos\\aos.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\aos\\aos.js",
+      "PackagePath": "staticwebassets\\vendor\\aos\\aos.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap-icons\\bootstrap-icons.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\bootstrap-icons.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap-icons\\bootstrap-icons.json",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\bootstrap-icons.json"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap-icons\\index.html",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\index.html"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\css\\animations.css",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\animations.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\css\\boxicons.css",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\boxicons.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\css\\boxicons.min.css",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\boxicons.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\css\\transformations.css",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\transformations.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.eot",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.eot"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.svg",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.svg"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.ttf",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.ttf"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.woff",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.woff"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.woff2",
+      "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.woff2"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\all.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\all.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\all.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\brands.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\brands.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\brands.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\fontawesome.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\regular.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\regular.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\regular.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\solid.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\solid.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\solid.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\v4-font-face.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\v4-font-face.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\v4-shims.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\v5-font-face.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\css\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\css\\v5-font-face.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\fontawesome-free\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\vendor\\fontawesome-free\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\glightbox\\css\\glightbox.css",
+      "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\glightbox.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\glightbox\\css\\glightbox.min.css",
+      "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\glightbox.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\glightbox\\css\\plyr.css",
+      "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\plyr.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\glightbox\\css\\plyr.min.css",
+      "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\plyr.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\glightbox\\js\\glightbox.js",
+      "PackagePath": "staticwebassets\\vendor\\glightbox\\js\\glightbox.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\glightbox\\js\\glightbox.min.js",
+      "PackagePath": "staticwebassets\\vendor\\glightbox\\js\\glightbox.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\php-email-form\\validate.js",
+      "PackagePath": "staticwebassets\\vendor\\php-email-form\\validate.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\purecounter\\purecounter_vanilla.js",
+      "PackagePath": "staticwebassets\\vendor\\purecounter\\purecounter_vanilla.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\swiper\\swiper-bundle.min.css",
+      "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.css"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js",
+      "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.js"
+    },
+    {
+      "Id": "F:\\ضحي\\Doctor Assistant\\Doctor Assistant\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js.map",
+      "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.js.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Doctor Assistant.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Doctor Assistant.props",
+      "PackagePath": "build\\Doctor Assistant.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Doctor Assistant.props",
+      "PackagePath": "buildMultiTargeting\\Doctor Assistant.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Doctor Assistant.props",
+      "PackagePath": "buildTransitive\\Doctor Assistant.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
