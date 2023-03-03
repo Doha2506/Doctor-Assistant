@@ -1,5 +1,4 @@
-﻿using Doctor_Assistant.Interfaces;
-using Doctor_Assistant.Models;
+﻿using Doctor_Assistant.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Collections.Generic;

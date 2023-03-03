@@ -1,5 +1,4 @@
-﻿using Doctor_Assistant.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Doctor_Assistant.Models

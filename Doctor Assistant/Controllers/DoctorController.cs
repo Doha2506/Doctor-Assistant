@@ -1,4 +1,3 @@
-using Doctor_Assistant.Interfaces;
 using Doctor_Assistant.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
