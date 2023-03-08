@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Doctor_Assistant.Models.RayJoinPatientJoinDoctor>
+﻿@model IEnumerable<Doctor_Assistant.Models.Ray>
 
 @{
     ViewData["Title"] = "Show Alzehimer's Patients";
@@ -52,7 +52,6 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Patient Name</th>
-                                        <th scope="col">Doctor Name</th>
                                         <th scope="col">Result</th>
                                         <th></th>
                                     </tr>
@@ -62,29 +61,25 @@
                                     {
                                         <tr>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.ray.Id)
+                                                @Html.DisplayFor(modelItem => item.Id)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.patient.Name)
-                                            </td>
-
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.doctor.Name)
+                                                @Html.DisplayFor(modelItem => item.patientName)
                                             </td>
 
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.ray.result)
+                                                @Html.DisplayFor(modelItem => item.result)
                                             </td>
 
 
-                                            @if (@TempData["DoctorId"] == item.doctor.Id.ToString())
+                                            @if (@TempData["DoctorId"] == item.doctorId.ToString())
                                             {
                                                 <td>
-                                                    @Html.ActionLink("", "EditRayPatient","Ray", new {  id=item.ray.Id },new {@class="fas fa-user-edit" , style="color:black"})
+                                                    @Html.ActionLink("", "EditRayPatient","Ray", new {  id=item.Id },new {@class="fas fa-user-edit" , style="color:black"})
                                                     |
-                                                    @Html.ActionLink("", "DeleteBrainTumorPatient", "Ray", new {  id=item.ray.Id  }, new {@class="fa fa-trash" , style="color:black"})
+                                                    @Html.ActionLink("", "DeleteBrainTumorPatient", "Ray", new {  id=item.Id  }, new {@class="fa fa-trash" , style="color:black"})
                                                     |
-                                                    @Html.ActionLink("", "ShowPatientRay", "Ray", new {  id=item.ray.Id  }, new {@class="far fa-eye" , style="color:black"})
+                                                    @Html.ActionLink("", "ShowPatientRay", "Ray", new {  id=item.Id  }, new {@class="far fa-eye" , style="color:black"})
                                                 </td>
                                             }
                                             else

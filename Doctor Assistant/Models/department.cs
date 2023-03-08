@@ -10,5 +10,10 @@
             var department = dBContext.departments.Where(x => x.Id.Equals(Id)).First();
             return department.Name;
         }
+        public int getIdByName(DBContext dBContext, string name)
+        {
+            var department = dBContext.departments.Where(x => x.Name.Equals(name)).First();
+            return department.Id;
+        }
     }
 }

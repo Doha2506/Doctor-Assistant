@@ -70,6 +70,10 @@ namespace Doctor_Assistant.Models
         {
             return FillDoctorsList(dbContext);
         }
+        public IEnumerable<Doctor> ShowAllDoctorsInSameDepartment(DBContext dbContext, int departmentId)
+        {
+            return dbContext.doctors.Where(x => x.deptID.Equals(departmentId)).ToList();
+        }
 
         private IEnumerable<DoctorJoinDepartment> FillDoctorsList(DBContext dbContext)
         {
@@ -86,7 +90,7 @@ namespace Doctor_Assistant.Models
 
             return list;
         }
-        public DoctorJoinDepartment SetDoctorDetails(DBContext dbContext, Doctor doctor)
+        private DoctorJoinDepartment SetDoctorDetails(DBContext dbContext, Doctor doctor)
         {
             DoctorJoinDepartment DoctorDepartment = new DoctorJoinDepartment
             {

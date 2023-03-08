@@ -7,7 +7,6 @@ namespace Doctor_Assistant.Models
 
         public Patient patient { get; set; }
         public StrokeDisease stroke { get; set; }
-        public Doctor doctor { get; set; }
 
     }
 }

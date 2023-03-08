@@ -131,7 +131,12 @@ namespace Doctor_Assistant.Controllers
         public IActionResult ShowAllDoctors()
         {
             if (setTempVariables())
-                return View(new Doctor().ShowDoctors(dbContext));
+            {
+               
+                int departmentId = new Department().getIdByName(dbContext, TempData["DoctorDept"].ToString());
+                return View(new Doctor().ShowAllDoctorsInSameDepartment(dbContext, departmentId));
+
+            }
             else
                 return RedirectToAction("login", "Doctor"); 
 

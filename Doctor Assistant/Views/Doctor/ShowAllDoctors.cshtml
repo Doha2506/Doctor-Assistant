@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Doctor_Assistant.Models.DoctorJoinDepartment>
+﻿@model IEnumerable<Doctor_Assistant.Models.Doctor>
 
 @{
     ViewData["Title"] = "Show Doctors";
@@ -64,25 +64,22 @@
                                         {
                                             <tr>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.doctor.Id)
+                                                    @Html.DisplayFor(modelItem => item.Id)
                                                 </td>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.doctor.Name)
+                                                    @Html.DisplayFor(modelItem => item.Name)
                                                 </td>
 
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.doctor.Email)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.department.Name)
+                                                    @Html.DisplayFor(modelItem => item.Email)
                                                 </td>
 
-                                                @if (@TempData["DoctorId"] == item.doctor.Id.ToString())
+                                                @if (@TempData["DoctorId"] == item.Id.ToString())
                                                 {
                                                     <td>
-                                                        @Html.ActionLink("", "EditDoctor","Doctor", new {  id=item.doctor.Id },new {@class="fas fa-user-edit" , style="color:black"})
+                                                        @Html.ActionLink("", "EditDoctor","Doctor", new {  id=item.Id },new {@class="fas fa-user-edit" , style="color:black"})
                                                         |
-                                                        @Html.ActionLink("", "DeleteDoctor", "Doctor", new {  id=item.doctor.Id  }, new {@class="fa fa-trash" , style="color:black"})
+                                                        @Html.ActionLink("", "DeleteDoctor", "Doctor", new {  id=item.Id  }, new {@class="fa fa-trash" , style="color:black"})
                                                     </td>
                                                 }
                                                 else

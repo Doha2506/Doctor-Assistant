@@ -43,50 +43,17 @@ namespace Doctor_Assistant.Models
         public void UpdateRay(DBContext dbContext, Ray ray)
         {
             dbContext.rays.Update(ray);
-            //dbContext.SaveChanges();
         }
+
         public Ray GetRayById(DBContext dbContext, int id)
         {
             return dbContext.rays.Where(x => x.Id.Equals(id)).First();
         }
-        public Ray GetRayByPatientId(DBContext dbContext, int patientId)
+
+        public List<Ray> GetAllRaysByDiseaseId(DBContext dbContext, int diseaseId, int doctorId)
         {
-            return dbContext.rays.Where(x => x.patientId.Equals(patientId)).First();
+            return dbContext.rays.Where(x => x.DiseaseId.Equals(diseaseId) && x.doctorId.Equals(doctorId)).ToList();
         }
 
-        public List<RayJoinPatientJoinDoctor> ShowRayPatientsByDieaseId(DBContext dbContext, int diseaseId)
-        {
-            return FillRaysDetails(dbContext, GetAllRaysByDiseaseId(dbContext, diseaseId));
-        }
-
-        private IEnumerable<Ray> GetAllRaysByDiseaseId(DBContext dbContext, int diseaseId)
-        {
-            return dbContext.rays.Where(x => x.DiseaseId.Equals(diseaseId)).ToList();
-        }
-
-        private List<RayJoinPatientJoinDoctor> FillRaysDetails(DBContext dbContext, IEnumerable<Ray> allPatients)
-        {
-            List<RayJoinPatientJoinDoctor> list = new List<RayJoinPatientJoinDoctor>();
-
-            foreach (var ray in allPatients)
-            {
-                RayJoinPatientJoinDoctor value = new RayJoinPatientJoinDoctor
-                {
-                    patient = new Patient(),
-                    ray = new Ray(),
-                    doctor = new Doctor()
-                };
-
-                value.ray = ray;
-
-                value.patient = new Patient().GetPatientById(dbContext, ray.patientId);
-
-                value.doctor = new Doctor().GetDoctorById(dbContext, ray.doctorId);
-
-                list.Add(value);
-            }
-
-            return list;
-        }
     }
 }

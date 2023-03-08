@@ -103,21 +103,21 @@ namespace Doctor_Assistant.Controllers
         public IActionResult ShowBrainTumorPatients()
         {
             if (setTempVariables())
-                return View(new Ray().ShowRayPatientsByDieaseId(dbContext, 1));
+                return View(new Ray().GetAllRaysByDiseaseId(dbContext, 1, (int)@HttpContext.Session.GetInt32("_DoctorID")));
             else
                 return RedirectToAction("login", "Doctor");
         }
         public IActionResult ShowAlzehimerPatients()
         {
             if (setTempVariables())
-                return View(new Ray().ShowRayPatientsByDieaseId(dbContext, 3));
+                return View(new Ray().GetAllRaysByDiseaseId(dbContext, 3, (int)@HttpContext.Session.GetInt32("_DoctorID")));
             else
                 return RedirectToAction("login", "Doctor");
         }
         public IActionResult ShowDiabeticRetinopathyPatients()
         {
             if (setTempVariables())
-                return View(new Ray().ShowRayPatientsByDieaseId(dbContext, 4));
+                return View(new Ray().GetAllRaysByDiseaseId(dbContext, 4, (int)@HttpContext.Session.GetInt32("_DoctorID")));
             else
                 return RedirectToAction("login", "Doctor");
         }
@@ -130,7 +130,7 @@ namespace Doctor_Assistant.Controllers
 
             var stream = new MemoryStream(image.ToArray());
 
-            return new FileStreamResult(stream, "image/jpeg");
+            return new FileStreamResult(stream, "imageDate/jpeg");
         }
 
         // ------------------ Edit Ray ---------------------

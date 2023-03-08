@@ -29,7 +29,6 @@ namespace Doctor_Assistant.Models
             dbContext.SaveChanges();
         }
 
-
         public Patient GetPatientById(DBContext dbContext, int id)
         {
             return dbContext.patients.Where(x => x.Id.Equals(id)).First();
@@ -53,17 +52,11 @@ namespace Doctor_Assistant.Models
 
         }
 
-        public IEnumerable<Patient> GetPatients(DBContext dbContext)
-        {
-            return dbContext.patients.ToList();
-        }
-
-
-        private IEnumerable<PatientJoinStrokeDisease> FillPatientsList(DBContext dbContext)
+        private IEnumerable<PatientJoinStrokeDisease> FillPatientsList(DBContext dbContext, int doctorId)
         {
             List<PatientJoinStrokeDisease> list = new List<PatientJoinStrokeDisease>();
 
-            var StrokeTests = new StrokeDisease().GetStrokeTests(dbContext);
+            var StrokeTests = new StrokeDisease().GetStrokeTests(dbContext, doctorId);
 
 
             foreach (var StrokeTest in StrokeTests)
@@ -84,28 +77,21 @@ namespace Doctor_Assistant.Models
             {
                 patient = new Patient(),
                 stroke = new StrokeDisease(),
-                doctor = new Doctor()
             };
+
             StrokePatient.stroke = StrokeTest;
 
             StrokePatient.patient.Name = getPatientNameById(dbContext, StrokeTest.PatientId);
 
             StrokePatient.patient.Email = getPatientEmailById(dbContext, StrokeTest.PatientId);
 
-            StrokePatient.doctor.Id = StrokeTest.DoctorId;
-
-            StrokePatient.doctor.Name = new Doctor().GetDoctorNameById(dbContext, StrokeTest.DoctorId);
-
-            StrokePatient.doctor.Email = new Doctor().GetDoctorEmailById(dbContext, StrokeTest.DoctorId);
-
             return StrokePatient;
         }
 
-
-        public IEnumerable<PatientJoinStrokeDisease> ShowPatients(DBContext dbContext)
+        public IEnumerable<PatientJoinStrokeDisease> ShowPatients(DBContext dbContext, int doctorId)
         {
            
-            return FillPatientsList(dbContext);
+            return FillPatientsList(dbContext, doctorId);
         }
 
         public PatientJoinStrokeDisease GetPatientDetailsById(DBContext dbContext, int id)

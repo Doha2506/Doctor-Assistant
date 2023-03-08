@@ -27,7 +27,7 @@ namespace Doctor_Assistant.Models
         public void AddNewStroke(DBContext dbContext, StrokeDisease stroke)
         {
             dbContext.strokeDisease.Add(stroke);
-            update(dbContext);
+            Update(dbContext);
         }
         public void UpdateStrokeTest(DBContext dbContext, StrokeDisease test)
         {
@@ -38,16 +38,17 @@ namespace Doctor_Assistant.Models
         public void DeleteStrokeTest(DBContext dbContext, StrokeDisease stroke)
         {
             dbContext.Remove(stroke);
-            update(dbContext);
+            Update(dbContext);
         }
-        private void update(DBContext dbContext)
+
+        private void Update(DBContext dbContext)
         {
             dbContext.SaveChanges();
         }
 
-        public IEnumerable<StrokeDisease> GetStrokeTests(DBContext dbContext)
+        public IEnumerable<StrokeDisease> GetStrokeTests(DBContext dbContext, int doctorId)
         {
-            return dbContext.strokeDisease.ToList();
+            return dbContext.strokeDisease.Where(x => x.DoctorId.Equals(doctorId)).ToList();
         }
 
         public StrokeDisease GetPatientTestById(DBContext dbContext, int id)

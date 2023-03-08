@@ -16,7 +16,6 @@ namespace Doctor_Assistant.Controllers
           
         }
 
-        
         public bool setTempVariables()
         {
             int? id = @HttpContext.Session.GetInt32("_DoctorID");
@@ -74,7 +73,7 @@ namespace Doctor_Assistant.Controllers
         public IActionResult ShowStrokePatients()
         {
             if (setTempVariables())
-                return View(new Patient().ShowPatients(dbContext));
+                return View(new Patient().ShowPatients(dbContext, (int)@HttpContext.Session.GetInt32("_DoctorID")));
             else
                 return RedirectToAction("login", "Doctor");
         }
@@ -113,7 +112,6 @@ namespace Doctor_Assistant.Controllers
 
             new Patient().UpdatePatient(dbContext, PatientJoinStroke.patient);
 
-            PatientJoinStroke.stroke = ChangeDoctor(PatientJoinStroke);
             if (PatientJoinStroke.stroke.Result == null)
             {
                 PatientJoinStroke.stroke.Result = "";
@@ -123,18 +121,7 @@ namespace Doctor_Assistant.Controllers
 
             return RedirectToAction("ShowStrokePatients");
         }
-        private StrokeDisease ChangeDoctor(PatientJoinStrokeDisease PatientJoinStroke)
-        {
-            string doctorEmail = PatientJoinStroke.doctor.Email;
-
-            int doctorId = new Doctor().GetDoctorIdByEmail(dbContext, doctorEmail);
-
-            PatientJoinStroke.stroke.DoctorId = doctorId;
-
-            return PatientJoinStroke.stroke;
-        }
-        
-
+       
         private PatientJoinStrokeDisease setEmptyFields(PatientJoinStrokeDisease PatientJoinStroke)
         {
             PatientJoinStroke.stroke.Id = (int)TempData["strokeId"];

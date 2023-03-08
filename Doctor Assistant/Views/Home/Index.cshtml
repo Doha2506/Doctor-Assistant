@@ -53,8 +53,7 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-                <div class="carousel-item active" style="background-image: url(https://yesofcorsa.com/wp-content/uploads/2017/05/Hospital-Best-Wallpaper.jpg)">
+          <div class="carousel-item active" style="background-image: url(https://yesofcorsa.com/wp-content/uploads/2017/05/Hospital-Best-Wallpaper.jpg)">
           <div class="container">
             <h2>Welcome to <span>Doctor Assistant</span></h2>
            
@@ -66,26 +65,11 @@
            
             <a href="#about" class="btn-get-started scrollto">Read More</a>
           </div>
-        </div>
-
-        <!-- Slide 2 -->
-                <div class="carousel-item" style="background-image: url(https://s-i.huffpost.com/gen/1766279/images/o-DOCTORS-facebook.jpg)">
-          <div class="container">
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-            <a href="#about" class="btn-get-started scrollto">Read More</a>
-          </div>
-        </div>
+        </div>               
 
       </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
+     
 
     </div>
   </section><!-- End Hero -->
@@ -220,17 +204,6 @@
               </a>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="fas fa-flask"></i>
-              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Research Lab</strong> See some statistics about the diseases</p>
-               <a class="navbar-brand" asp-area="" asp-controller="Doctor" asp-action="login">
-                  Find out more &raquo;
-               </a>
-            </div>
-          </div>
          
         </div>
 
@@ -245,16 +218,10 @@
                 <h2>Services</h2>
             </div>
 
-                @if (@TempData["DoctorDept"].Equals("Brain"))
-                {
                     <div class="row" style="margin-top:30px;">
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-brain"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="AddNewBrainTumorPatient">
-                                    Brain Tumor Classification
-                                </a>
-                            </h4>
+                            <h4 class="title">Brain Tumor Classification</h4>
 
                             <p class="description">
                                 The classification of brain tumors is performed by biopsy, which is not usually
@@ -265,9 +232,8 @@
 
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
                             <div class="icon"><i class="fas fa-head-side-virus"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Stroke" asp-action="AddStrokePatient">Stroke Disease Detection</a>
-                            </h4>
+                            <h4 class="title">Stroke Disease Detection</h4>
+
                             <p class="description">
                                 Early detection and appropriate management are required to prevent
                                 further damage to the affected area of the brain and other
@@ -278,11 +244,8 @@
 
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
                             <div class="icon"><i class="fas fa-head-side-virus"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="AddNewAlzehimerPatient">
-                                    Alzheimer's Disease Detection
-                                </a>
-                            </h4>
+                            <h4 class="title">Alzheimer's Disease Detection</h4>
+
                             <p class="description">
                                 There is no cure for Alzheimer's disease, but earlier intervention can
                                 help slow dementia progress.
@@ -294,11 +257,8 @@
 
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="ShowBrainTumorPatients">
-                                    Show Brain Tumor Patients
-                                </a>
-                            </h4>
+                            <h4 class="title">Show Brain Tumor Patients</h4>
+
                             <p class="description">
                                 Show all patients that has brain tumor disease.
                             </p>
@@ -306,9 +266,8 @@
 
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Stroke" asp-action="ShowStrokePatients">Show Stroke Patients</a>
-                            </h4>
+                            <h4 class="title">Show Stroke Patients</h4>
+
                             <p class="description">
                                 Show all patients that has stroke disease.
 
@@ -317,28 +276,20 @@
 
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="ShowAlzehimerPatients">
-                                    Show Alzehimer's Patients
-                                </a>
-                            </h4>
+                            <h4 class="title">Show Alzehimer's Patients</h4>
+
                             <p class="description">
                                 Show all patients that has Alzehimer disease.
                             </p>
                         </div>
 
                     </div>
-                }
-                else if (@TempData["DoctorDept"].Equals("Eye"))
-                {
+                
                     <div class="row" style="margin-bottom:300px;">
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-eye"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="AddNewDiabeticPatient">
-                                    Diabetic Retinopathy Detection
-                                </a>
-                            </h4>
+                            <h4 class="title">Diabetic Retinopathy Detection</h4>
+
                             <p class="description">
                                 If you have diabetes, it’s important to get a comprehensive dilated
                                 eye exam at least once a year. Diabetic retinopathy may not
@@ -350,129 +301,14 @@
 
                         <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="ShowDiabeticRetinopathyPatients">
-                                    Show Diabetic Retinopathy Patients
-                                </a>
-                            </h4>
+                            <h4 class="title">Show Diabetic Retinopathy Patients</h4>
+
                             <p class="description">
                                 Show all patients that has diabetic retinopathy disease.
                             </p>
                         </div>
 
                     </div>
-                }
-                else
-                {
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-brain"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="AddNewBrainTumorPatient">
-                                    Brain Tumor Classification
-                                </a>
-                            </h4>
-
-                            <p class="description">
-                                The classification of brain tumors is performed by biopsy, which is not usually
-                                conducted before definitive brain surgery.
-                            </p>
-
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="icon"><i class="fas fa-head-side-virus"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Stroke" asp-action="AddStrokePatient">Stroke Disease Detection</a>
-                            </h4>
-                            <p class="description">
-                                Early detection and appropriate management are required to prevent
-                                further damage to the affected area of the brain and other
-                                complications in other parts of the body.
-                            </p>
-                        </div>
-
-
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="icon"><i class="fas fa-head-side-virus"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="AddNewAlzehimerPatient">
-                                    Alzheimer's Disease Detection
-                                </a>
-                            </h4>
-                            <p class="description">
-                                There is no cure for Alzheimer's disease, but earlier intervention can
-                                help slow dementia progress.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-eye"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="AddNewDiabeticPatient">
-                                    Diabetic Retinopathy Detection
-                                </a>
-                            </h4>
-                            <p class="description">
-                                If you have diabetes, it’s important to get a comprehensive dilated
-                                eye exam at least once a year. Diabetic retinopathy may not
-                                have any symptoms at first — but finding it early can help you take steps
-                                to protect your vision.
-
-                            </p>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Stroke" asp-action="ShowStrokePatients">Show Stroke Patients</a>
-                            </h4>
-                            <p class="description">
-                                Show all patients that has stroke disease.
-
-                            </p>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="ShowBrainTumorPatients">
-                                    Show Brain Tumor Patients
-                                </a>
-                            </h4>
-                            <p class="description">
-                                Show all patients that has brain tumor disease.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="ShowAlzehimerPatients">
-                                    Show Alzehimer's Patients
-                                </a>
-                            </h4>
-                            <p class="description">
-                                Show all patients that has Alzehimer disease.
-                            </p>
-                        </div>
-
-
-                        <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-user-friends"></i></div>
-                            <h4 class="title">
-                                <a asp-controller="Ray" asp-action="ShowDiabeticRetinopathyPatients">
-                                    Show Diabetic Retinopathy Patients
-                                </a>
-                            </h4>
-                            <p class="description">
-                                Show all patients that has diabetic retinopathy disease.
-                            </p>
-                        </div>
-
-                    </div>
-                }
     </div>
 </section>
 <!-- End Services Section -->

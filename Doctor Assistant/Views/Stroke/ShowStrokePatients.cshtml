@@ -54,7 +54,6 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Patient Name</th>
-                                            <th scope="col">Doctor Name</th>
                                             <th scope="col">Has Stroke ?</th>
                                             <th scope="col">Result</th>
                                             <th></th>
@@ -71,9 +70,7 @@
                                                     @Html.DisplayFor(modelItem => item.patient.Email)
                                                 </td>
 
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.doctor.Name)
-                                                </td>
+                                                
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.stroke.Stroke)
                                                 </td>
@@ -81,7 +78,7 @@
                                                     @Html.DisplayFor(modelItem => item.stroke.Result)
                                                 </td>
                                            
-                                                @if (@TempData["DoctorId"] == item.doctor.Id.ToString())
+                                                @if (@TempData["DoctorId"] == item.stroke.DoctorId.ToString())
                                                 {
                                                     <td>
                                                         @Html.ActionLink("", "EditStrokePatient","Stroke",
@@ -98,18 +95,7 @@
                                                 {
                                                     <td></td>
                                                 }
-                                                <!--
-                                            <td>
-                                                @*Html.ActionLink("", "EditStrokePatient","Stroke",
-                                            new {  id=item.stroke.Id },new {@class="fas fa-edit" , style="color:black"})|
-
-                                                @Html.ActionLink("", "DetailsOfStrokePatient", "Stroke",
-                                            new { id=item.stroke.Id  },  new {@class="fas fa-file-alt" , style="color:black"}) |
-
-                                                @Html.ActionLink("", "DeleteStrokePatient", "Stroke",
-                                            new {  id=item.stroke.Id  }, new {@class="fa fa-trash" , style="color:black"})
-                                            </td>*@
-                                            -->
+                                               
                                             </tr>
 
                                         }
