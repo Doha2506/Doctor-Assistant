@@ -65,15 +65,10 @@
                                             <input asp-for="patientEmail" type="email" class="form-control" placeholder="Patient Email">
                                         </div>
                                     </div>
+                                    
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <div class="form-outline flex-fill mb-0">
-                                            <select id="form3Example4cd" class="form-control" asp-for="DiseaseId">
-                                                <option selected>Disease</option>
-                                                <option value="1">Brain Tumor</option>
-                                                <option value="2">Stroke</option>
-                                                <option value="3">Alzehimer</option>
-                                                <option value="4">Diabetic Retinopathy</option>
-                                            </select>
+                                            <input style="display:none" asp-for="DiseaseId" value="3">
                                         </div>
                                     </div>
 

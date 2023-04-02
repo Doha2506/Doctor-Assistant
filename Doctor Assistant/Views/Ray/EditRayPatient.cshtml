@@ -87,9 +87,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="d-flex flex-row align-items-center mb-4">
-                                            <div class="form-outline flex-fill mb-0">
-                                                <select id="form3Example4cd" class="form-control" asp-for="DiseaseId">
+                                       
+                                                <select style="display:none;" id="form3Example4cd" class="form-control" asp-for="DiseaseId">
                                                     @if(Model.DiseaseId == 1)
                                                     {
                                                         <option selected value="1">Brain Tumor</option>
@@ -120,8 +119,7 @@
                                                     }
 
                                                 </select>
-                                            </div>
-                                        </div>
+                                            
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <div class="form-outline flex-fill mb-0">

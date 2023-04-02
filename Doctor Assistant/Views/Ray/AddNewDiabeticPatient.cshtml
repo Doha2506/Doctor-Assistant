@@ -6,6 +6,8 @@
 
 @model Ray
 
+
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -49,7 +51,6 @@
                     <div class="card-body p-md-5">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Diabetic Retinopathy</p>
 
                                 <form asp-action="UploadImage" asp-controller="Ray" method="post" enctype="multipart/form-data">
@@ -65,18 +66,13 @@
                                             <input asp-for="patientEmail" type="email" class="form-control" placeholder="Patient Email">
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-row align-items-center mb-4">
+                                  
+                                   <div class="d-flex flex-row align-items-center mb-4">
                                         <div class="form-outline flex-fill mb-0">
-                                            <select id="form3Example4cd" class="form-control" asp-for="DiseaseId">
-                                                <option selected>Disease</option>
-                                                <option value="1">Brain Tumor</option>
-                                                <option value="2">Stroke</option>
-                                                <option value="3">Alzehimer</option>
-                                                <option value="4">Diabetic Retinopathy</option>
-                                            </select>
+                                            <input style="display:none" asp-for="DiseaseId" value="4">
                                         </div>
                                     </div>
-
+                                  
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <div class="form-outline flex-fill mb-0">
                                             <input asp-for="imageDate" type="file">
