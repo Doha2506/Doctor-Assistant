@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 from flask import Flask, request, jsonify
 import numpy as np
 import requests
@@ -8,10 +14,12 @@ import cv2
 import os
 import io
 import pickle
+import cv2
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn import preprocessing
 import warnings
+import matplotlib.pyplot as plt
 
 def BrainStroke_Preprocessing(raw_data):
     # Load the raw data into a pandas dataframe
@@ -75,60 +83,44 @@ def BrainStroke_Preprocessing(raw_data):
 
 
 def DiabeticRetinoapthy_Preprocessing(image):
-    def crop_image(img, tol=7):
-        if img.ndim == 2:
-            mask = img > tol
-            return img[np.ix_(mask.any(1), mask.any(0))]
-        elif img.ndim == 3:
-            gray_img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-            mask = gray_img > tol
-            check_shape = img[:, :, 0][np.ix_(mask.any(1), mask.any(0))].shape[0]
-            if check_shape == 0:  # image is too dark so that we crop out everything,
-                return img  # return original image
-            else:
-                img1 = img[:, :, 0][np.ix_(mask.any(1), mask.any(0))]
-                img2 = img[:, :, 1][np.ix_(mask.any(1), mask.any(0))]
-                img3 = img[:, :, 2][np.ix_(mask.any(1), mask.any(0))]
-                img = np.stack([img1, img2, img3], axis=-1)
-
-            return img
-    def circle_crop(img):
-        img = crop_image(img)
-
-        height, width, depth = img.shape
-        largest_side = np.max((height, width))
-        img = cv2.resize(img, (largest_side, largest_side))
-
-        height, width, depth = img.shape
-
-        x = width // 2
-        y = height // 2
-        r = np.amin((x, y))
-
-        circle_img = np.zeros((height, width), np.uint8)
-        cv2.circle(circle_img, (x, y), int(r), 1, thickness=-1)
-        img = cv2.bitwise_and(img, img, mask=circle_img)
-        img = crop_image(img)
-
-        return img
-    if np.mean(image) < 10:
-        return False
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    image = circle_crop(image)
-    image = cv2.resize(image, (150, 150))
-    image = cv2.addWeighted(image, 4, cv2.GaussianBlur(image, (0, 0), 10), -4, 128)
-    return image
+    def check_image_size(img):
+        if img.shape[0] < 224 or img.shape[1] < 224:
+            return False
+        else:
+            return True
+    def check_retina_exist(img):
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        center_x, center_y = img.shape[1] // 2, img.shape[0] // 2
+        radius = min(center_x, center_y) - 10  # Add a margin of 10 pixels
+        mask = np.zeros(img.shape[:2], np.uint8)
+        cv2.circle(mask, (center_x, center_y), radius, 255, -1)
+        masked_image = cv2.bitwise_and(img, img, mask=mask)
+        if cv2.countNonZero(masked_image) < 1000:
+            return False
+        else:
+            return True
+    check_size=check_image_size(image)
+    check_retina=check_retina_exist(image)
+    if (check_size==False):
+        return "Image dimensions are too small for diabetic retinopathy classification."
+    elif (check_retina==False):
+        return "Image does not contain the retina."
+    else:
+        #gaussian = cv2.addWeighted(image, 4, cv2.GaussianBlur(image, (0,0), 10), -4, 128)
+        #gaussian = cv2.resize(gaussian, (224, 224))
+        return image
 
 
 
-DR_Model = tf.keras.models.load_model("DR_Model_latest.h5")
+
+DR_Model = tf.keras.models.load_model("DiabeticRetinopathyModel.h5")
 
 DiabeticRetinopathy_Labels = {
-    0: "No DR",
-    1: "Mild",
-    2: "Moderate",
-    3: "Severe",
-    4: "Proliferative DR",
+    0: "Mild",
+    1: "Moderate",
+    2: "NO_DR",
+    3: "Proliferate_DR",
+    4: "Severe",
 }
 
 with open('BrainStrokeModel.h5', 'rb') as file:
@@ -142,26 +134,24 @@ BrainStroke_Labels = {
 app = Flask(__name__)
 
 
-@app.route("/DiabeticRetinopathy/", methods=["POST"])
+@app.route("/DiabeticRetinopathy/", methods=["GET"])
 def DiabeticRetinopathy_Prediction():
     try:
-        #print(request)
-        print(request.data)
-        image_data = request.files['image'].read()
+        file = request.files['image'].read()
         # Load the image from binary data using PIL
-        img = Image.open(io.BytesIO(image_data))
+        img = Image.open(io.BytesIO(file))
         # Convert the image to a NumPy array
         image_array = np.array(img)
         preprocessed_image = DiabeticRetinoapthy_Preprocessing(image_array)
-        if preprocessed_image is False:
+        if isinstance(preprocessed_image, str):
+            Error_message=preprocessed_image
             return (
-                jsonify({"status": False, "message": "Please enter a clear image"}),
+                jsonify({"status": False, "message": Error_message}),
                 400,
             )
-        content = np.expand_dims(preprocessed_image, axis=0)
-        content = DR_Model.predict(content).round(3)
+        prev_content = np.expand_dims(preprocessed_image, axis=0)
+        content = DR_Model.predict(prev_content)
         prediction = np.argmax(content)
-      
         response = {
             "status": True,
             "code": 200,
@@ -169,34 +159,34 @@ def DiabeticRetinopathy_Prediction():
             "data": str(DiabeticRetinopathy_Labels[int(prediction)]),
         }
         return jsonify(response), 200
-     
     except Exception as e:
-        print(e)
         return jsonify({"status": False, "message": f"Exception Message : {e}"}), 400
 
-@app.route("/BrainStroke/", methods=["POST"])
+@app.route("/BrainStroke/", methods=["GET"])
 def BrainStroke_Prediction():
     try:
-        print(request.json)
         data = request.json
         preprocessed_data=BrainStroke_Preprocessing(data)
         new_data_2d = preprocessed_data.values.reshape(1, -1)
         prediction = BrainStroke_Model.predict(new_data_2d)
         prediction=int(prediction)
-        
         response = {
             "status": True,
             "code": 200,
             "message": "Success",
             "data": str(BrainStroke_Labels[int(prediction)]),
         }
-        print(response)
         return jsonify(response), 200
-        
     except Exception as e:
-        print(e)
         return jsonify({"status": False, "message": f"Exception Message : {e}"}), 400
     
 
 if __name__ == '__main__':
     app.run(port=8082)
+
+
+# In[ ]:
+
+
+
+
