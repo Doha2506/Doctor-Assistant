@@ -1,6 +1,12 @@
 using Doctor_Assistant.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using System.Text;
+using System.Xml.Linq;
+using static Humanizer.On;
 
 namespace Doctor_Assistant.Controllers
 {
@@ -42,16 +48,110 @@ namespace Doctor_Assistant.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddStrokePatient(PatientJoinStrokeDisease PatientJoinStroke)
+        public async Task<IActionResult> AddStrokePatient(PatientJoinStrokeDisease PatientJoinStroke)
         {
             new Patient().AddPatient(dbContext, PatientJoinStroke.patient);
 
 
             PatientJoinStroke.stroke = setStrokeInfo(PatientJoinStroke.stroke, PatientJoinStroke.patient);
+            
+            await SendData(PatientJoinStroke.stroke);
 
             new StrokeDisease().AddNewStroke(dbContext, PatientJoinStroke.stroke);
 
             return RedirectToAction("Index","Home");
+        }
+        
+        public async Task<IActionResult> SendData(StrokeDisease patient)
+        {
+
+            var data = setData(patient);
+
+            var client = new HttpClient();
+
+            var content = new StringContent(JsonConvert.SerializeObject(data));
+
+            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+            var response = await client.PostAsync(@"http://127.0.0.1:5000/BrainStroke/", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var result = JObject.Parse(jsonString);
+                var output = result["data"].ToString();
+                return Ok();
+            }
+            else
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var result = JObject.Parse(jsonString);
+                var output = result["message"].ToString();
+                return BadRequest();
+            }
+        }
+        private object setData(StrokeDisease patient)
+        {
+            string gender_Male;
+            if (patient.IsMale == true)
+            {
+                gender_Male = "Male";
+            }
+            else
+            {
+                gender_Male = "Female";
+            }
+            int hypertension;
+            if (patient.Hypertension == true)
+            {
+                hypertension = 1;
+            }
+            else
+            {
+                hypertension = 0;
+            }
+            int heart_disease;
+            if (patient.HeartDisease == true)
+            {
+                heart_disease = 1;
+            }
+            else
+            {
+                heart_disease = 0;
+            }
+            string ever_married = string.Empty;
+            if (patient.IsMarried == true)
+            {
+                ever_married = "Yes";
+            }
+            else
+            {
+                ever_married = "No";
+            }
+            string Residence_type = string.Empty;
+            if (patient.ResidenceType == true)
+            {
+                Residence_type = "Urban";
+            }
+            else
+            {
+                Residence_type = "Rural";
+            }
+
+            var data = new
+            {
+                gender = gender_Male,
+                age = patient.Age,
+                hypertension = hypertension,
+                heart_disease = heart_disease,
+                ever_married = ever_married,
+                work_type = patient.WorkType,
+                Residence_type = Residence_type,
+                avg_glucose_level = patient.AvrGlucoseLevel,
+                bmi = patient.BMI,
+                smoking_status = patient.SmokingStatus,
+            };
+            return data;
         }
 
         private StrokeDisease setStrokeInfo(StrokeDisease stroke, Patient patient)
