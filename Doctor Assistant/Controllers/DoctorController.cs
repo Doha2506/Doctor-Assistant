@@ -1,7 +1,10 @@
 using Doctor_Assistant.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.IO;
+using System.Xml.Linq;
 
 
 namespace Doctor_Assistant.Controllers
@@ -89,6 +92,7 @@ namespace Doctor_Assistant.Controllers
             {
                 setDoctorId(doctor);
                 setTempVariables();
+               // SendData();
                 return RedirectToAction("Services", "Home");
             }
             else
@@ -96,6 +100,31 @@ namespace Doctor_Assistant.Controllers
                 TempData["loginError"] = "Email or Password is wrong :(";
                 return RedirectToAction("login");
             }
+        }
+        public async Task<IActionResult> SendData()
+        {
+
+            var client = new HttpClient();
+
+            client.BaseAddress = new Uri("http://127.0.0.1:5000");
+
+            var request = new HttpRequestMessage(HttpMethod.Get, "/test");
+            request.Headers.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+            var response = await client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var data = JObject.Parse(jsonString);
+                var output = data["data"].ToString();
+                return Ok(data);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        
         }
 
         public IActionResult ViewDepartmentDiseases()

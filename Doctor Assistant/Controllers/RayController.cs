@@ -1,9 +1,13 @@
 ﻿using Doctor_Assistant.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
+using System.Net.Http.Headers;
+using System.Text;
 using static Humanizer.On;
 
 namespace Doctor_Assistant.Controllers
 {
+    
     public class RayController : Controller
     {
         private readonly ILogger<RayController> _logger;
@@ -61,6 +65,7 @@ namespace Doctor_Assistant.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadImage(Ray ray, List<IFormFile> imageDate)
         {
+            
             setTempVariables();
 
             Patient patient = new Patient();
@@ -82,10 +87,38 @@ namespace Doctor_Assistant.Controllers
                 }
             }
 
+            await sendImage(ray);
+
             new Ray().AddRay(dbContext, ray);
             await dbContext.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        private async Task<IActionResult> sendImage(Ray ray)
+        {
+            AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
+            var client = new HttpClient();
+
+            ByteArrayContent content = new ByteArrayContent(ray.imageDate);
+
+            var response = await client.PostAsync(@"http://127.0.0.1:5000/DiabeticRetinopathy/", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var result = JObject.Parse(jsonString);
+                var output = result["data"].ToString();
+                return Ok();
+            }
+            else
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                var result = JObject.Parse(jsonString);
+                var output = result["message"].ToString();
+                return BadRequest();
+            }
+        }
+
         private Ray setPateintRay(Ray ray)
         {
 
