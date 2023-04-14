@@ -73,6 +73,8 @@ namespace Doctor_Assistant.Controllers
             patient.Name = ray.patientName;
             new Patient().AddPatient(dbContext, patient);
 
+           int  patientId = new Patient().getPatientIdByEmail(dbContext, patient.Email);
+
             ray = setPateintRay(ray);
 
             foreach (var item in imageDate)
@@ -87,35 +89,54 @@ namespace Doctor_Assistant.Controllers
                 }
             }
 
-            await sendImage(ray);
+            var output = await sendImage(ray);
+            if (output == "Mild" || output == "Moderate" || output == "NO_DR" 
+                    || output == "Proliferate_DR" || output == "Severe")
+            {
 
-            new Ray().AddRay(dbContext, ray);
-            await dbContext.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
+                new Ray().AddRay(dbContext, ray);
+                await dbContext.SaveChangesAsync();
+
+                int rayId = new Ray().GetRayByPatientId(dbContext, patientId).Id;
+
+                TempData["patientImage"] = "https://localhost:7298/Ray/ShowPatientRay/"+ rayId;
+                TempData["rayPatientName"] = patient.Name;
+                TempData["rayPatientEmail"] = patient.Email;
+                TempData["rayPatientResult"] = output;
+
+                return RedirectToAction("ShowResult");
+            }
+            else
+            {
+                TempData["rayError"] = "Please Enter Clear Image";
+                return RedirectToAction("Services", "Home");
+            }
         }
 
-        private async Task<IActionResult> sendImage(Ray ray)
+        private async Task<string> sendImage(Ray ray)
         {
-            AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
-            var client = new HttpClient();
+            using var httpClient = new HttpClient();
 
-            ByteArrayContent content = new ByteArrayContent(ray.imageDate);
+            // Create MultipartFormDataContent object
+            var formData = new MultipartFormDataContent();
+            formData.Add(new ByteArrayContent(ray.imageDate), "image", "image.jpg");
 
-            var response = await client.PostAsync(@"http://127.0.0.1:5000/DiabeticRetinopathy/", content);
+            // Send POST request with image data
+            var response = await httpClient.PostAsync("http://127.0.0.1:5000/DiabeticRetinopathy", formData);
 
             if (response.IsSuccessStatusCode)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
                 var result = JObject.Parse(jsonString);
                 var output = result["data"].ToString();
-                return Ok();
+                return output;
             }
             else
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
                 var result = JObject.Parse(jsonString);
                 var output = result["message"].ToString();
-                return BadRequest();
+                return output;
             }
         }
 
@@ -130,6 +151,15 @@ namespace Doctor_Assistant.Controllers
             ray.patientEmail = patient.Email;
 
             return ray;
+        }
+        // ---------------------- Show Result ----------------------------
+
+        public IActionResult ShowResult()
+        {
+            if (setTempVariables())
+                return View();
+            else
+                return RedirectToAction("login", "Doctor");
         }
 
         // -------------- Show -------------------------
@@ -163,7 +193,9 @@ namespace Doctor_Assistant.Controllers
 
             var stream = new MemoryStream(image.ToArray());
 
-            return new FileStreamResult(stream, "imageDate/jpeg");
+            Response.ContentType = "image/jpeg";
+
+            return File(stream, "image/jpeg", "image.jpg");
         }
 
         // ------------------ Edit Ray ---------------------

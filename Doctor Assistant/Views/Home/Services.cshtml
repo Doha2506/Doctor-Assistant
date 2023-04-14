@@ -272,7 +272,15 @@
 </section>
 
 
+@{
+    if (TempData["rayError"] != null)
+    {
+        <script>
+            alert("@TempData["rayError"]")
+        </script>
+    }
 
+}
 
 <!-- End Services Section -->
 

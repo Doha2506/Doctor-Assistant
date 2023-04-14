@@ -96,6 +96,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF5XFNob3dQYXRpZW50UmF5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/ضحي/Doctor Assistant/Doctor Assistant/Views/Ray/ShowResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF5XFNob3dSZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/ضحي/Doctor Assistant/Doctor Assistant/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -130,6 +134,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/EditStrokePatient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Ryb2tlXEVkaXRTdHJva2VQYXRpZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/ShowResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3Ryb2tlXFNob3dSZXN1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/ضحي/Doctor Assistant/Doctor Assistant/Views/Stroke/ShowStrokePatients.cshtml]

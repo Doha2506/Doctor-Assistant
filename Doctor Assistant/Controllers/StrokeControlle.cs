@@ -52,17 +52,33 @@ namespace Doctor_Assistant.Controllers
         {
             new Patient().AddPatient(dbContext, PatientJoinStroke.patient);
 
-
             PatientJoinStroke.stroke = setStrokeInfo(PatientJoinStroke.stroke, PatientJoinStroke.patient);
             
-            await SendData(PatientJoinStroke.stroke);
+            var output = await SendData(PatientJoinStroke.stroke);
 
-            new StrokeDisease().AddNewStroke(dbContext, PatientJoinStroke.stroke);
+            if(output == "Stroke" || output == "No Stroke")
+            {
+                if (output == "Stroke")
+                    PatientJoinStroke.stroke.Stroke = true;
+                else
+                    PatientJoinStroke.stroke.Stroke = false;
 
-            return RedirectToAction("Index","Home");
+                new StrokeDisease().AddNewStroke(dbContext, PatientJoinStroke.stroke);
+                TempData["strokePatientName"] = PatientJoinStroke.patient.Name;
+                TempData["strokePatientEmail"] = PatientJoinStroke.patient.Email;
+                TempData["strokePatientResult"] = output;
+
+                return RedirectToAction("ShowResult");
+            }
+            else
+            {
+                TempData["strokeError"] = "Please Enter Correct Data";
+                return RedirectToAction("AddStrokePatient");
+            }
+           
         }
         
-        public async Task<IActionResult> SendData(StrokeDisease patient)
+        public async Task<string> SendData(StrokeDisease patient)
         {
 
             var data = setData(patient);
@@ -80,14 +96,15 @@ namespace Doctor_Assistant.Controllers
                 var jsonString = await response.Content.ReadAsStringAsync();
                 var result = JObject.Parse(jsonString);
                 var output = result["data"].ToString();
-                return Ok();
+                return output;
+                
             }
             else
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
                 var result = JObject.Parse(jsonString);
                 var output = result["message"].ToString();
-                return BadRequest();
+                return output;
             }
         }
         private object setData(StrokeDisease patient)
@@ -166,6 +183,15 @@ namespace Doctor_Assistant.Controllers
 
             return stroke;
 
+        }
+        // -------------------------- Show Result ----------------------------
+
+        public IActionResult ShowResult()
+        {
+            if (setTempVariables())
+                return View();
+            else
+                return RedirectToAction("login", "Doctor");
         }
 
         //--------------- Show Stroke Patient --------------
