@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+import joblib
 
 from flask import Flask, request, jsonify
 import numpy as np
@@ -131,6 +132,26 @@ BrainStroke_Labels = {
     1: "Stroke"
 }
 
+BrainTumor_Model = tf.keras.models.load_model("brain_model.h5")
+
+BrainTumor_Labels = {
+     0:'glioma_tumor',
+      1:'no_tumor',
+      2:'meningioma_tumor',
+        3:'pituitary_tumor'   
+}
+
+
+BrainAlzhemir_Model = tf.keras.models.load_model("AD_Model.h5")
+
+
+BrainAlzhemir_Labels = {
+    2:'Non_Demented', 
+    1:'Moderate_Demented', 
+    3:'Very_Mild_Demented', 
+    0:'Mild_Demented'
+}
+
 app = Flask(__name__)
 
 
@@ -161,6 +182,53 @@ def DiabeticRetinopathy_Prediction():
         return jsonify(response), 200
     except Exception as e:
         return jsonify({"status": False, "message": f"Exception Message : {e}"}), 400
+
+@app.route("/BrainTumor/", methods=["GET"])
+def BrainTumor_Prediction():
+    try:
+        file = request.files['image'].read()
+        # Load the image from binary data using PIL
+        img = Image.open(io.BytesIO(file))
+        # Convert the image to a NumPy array
+        image_array = np.array(img)
+        preprocessed_image = cv2.resize(image_array,(150, 150))
+        prev_content = np.expand_dims(preprocessed_image, axis=0)
+        content = BrainTumor_Model.predict(prev_content)
+        prediction = np.argmax(content)
+        response = {
+            "status": True,
+            "code": 200,
+            "message": "Success",
+            "data": str(BrainTumor_Labels[int(prediction)]),
+        }
+        return jsonify(response), 200
+    except Exception as e:
+        return jsonify({"status": False, "message": f"Exception Message : {e}"}), 400
+    
+@app.route("/BrainAlzhemir/", methods=["GET"])
+def BrainAlzhemir_Prediction():
+    try:
+        file = request.files['image'].read()
+        # Load the image from binary data using PIL
+        img = Image.open(io.BytesIO(file))
+        # Convert the image to a NumPy array
+        image_array = np.array(img)
+        preprocessed_image = cv2.resize(image_array,(128, 128))
+        preprocessed_image = np.expand_dims(preprocessed_image, axis=-1)  # Add a new axis for color channel
+        preprocessed_image = np.repeat(preprocessed_image, 3, axis=-1)  # Repeat the channel axis 3 times to get RGB image
+        prev_content = np.expand_dims(preprocessed_image, axis=0)
+        content = BrainAlzhemir_Model.predict(prev_content)
+        prediction = np.argmax(content)
+        response = {
+            "status": True,
+            "code": 200,
+            "message": "Success",
+            "data": str(BrainAlzhemir_Labels[int(prediction)]),
+        }
+        return jsonify(response), 200
+    except Exception as e:
+        return jsonify({"status": False, "message": f"Exception Message : {e}"}), 400
+      
 
 @app.route("/BrainStroke/", methods=["GET"])
 def BrainStroke_Prediction():
