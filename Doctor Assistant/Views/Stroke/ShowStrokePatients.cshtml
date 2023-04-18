@@ -55,7 +55,6 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Patient Name</th>
                                             <th scope="col">Has Stroke ?</th>
-                                            <th scope="col">Result</th>
                                             <th></th>
                                         </tr>
                                 </thead>
@@ -73,9 +72,6 @@
                                                 
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.stroke.Stroke)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.stroke.Result)
                                                 </td>
                                            
                                                 @if (@TempData["DoctorId"] == item.stroke.DoctorId.ToString())
