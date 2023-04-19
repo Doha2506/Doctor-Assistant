@@ -89,11 +89,41 @@ namespace Doctor_Assistant.Controllers
                 }
             }
 
-            var output = await sendImage(ray);
-            if (output == "Mild" || output == "Moderate" || output == "NO_DR" 
-                    || output == "Proliferate_DR" || output == "Severe")
-            {
+            var output = "";
+            bool result = false;
 
+            if (ray.DiseaseId == 4) // DR disease
+            {
+                output = await sendDRImage(ray);
+                if (output == "Mild" || output == "Moderate" || output == "NO_DR"
+                    || output == "Proliferate_DR" || output == "Severe")
+                {
+                    result = true;
+                }
+            }
+            else if (ray.DiseaseId == 1) // Brain Tumor disease
+            {
+                output = await sendBrainTumorImage(ray);
+
+                if (output == "Glioma_Tumor" || output == "No_Tumor" || output == "Meningioma_Tumor"
+                    || output == "Pituitary_Tumor")
+                {
+                    result = true;
+                }
+            }
+            else if (ray.DiseaseId == 3) // Alzehimer Tumor disease
+            {
+                output = await sendAlzehimerImage(ray);
+
+                if (output == "Non_Demented" || output == "Moderate_Demented" || output == "Very_Mild_Demented"
+                    || output == "Mild_Demented")
+                {
+                    result = true;
+                }
+            }
+
+            if (result == true)
+            {
                 new Ray().AddRay(dbContext, ray);
                 await dbContext.SaveChangesAsync();
 
@@ -112,18 +142,50 @@ namespace Doctor_Assistant.Controllers
                 return RedirectToAction("Services", "Home");
             }
         }
+       
+        private MultipartFormDataContent MakeFormData(Ray ray)
+        {
+            var formData = new MultipartFormDataContent();
+            formData.Add(new ByteArrayContent(ray.imageDate), "image", "image.jpg");
+            return formData;
+        }
 
-        private async Task<string> sendImage(Ray ray)
+
+        private async Task<string> sendDRImage(Ray ray)
         {
             using var httpClient = new HttpClient();
 
-            // Create MultipartFormDataContent object
-            var formData = new MultipartFormDataContent();
-            formData.Add(new ByteArrayContent(ray.imageDate), "image", "image.jpg");
+            var formData = MakeFormData(ray);
 
-            // Send POST request with image data
             var response = await httpClient.PostAsync("http://127.0.0.1:5000/DiabeticRetinopathy", formData);
 
+            return await GetResponse(response);
+        }
+
+        private async Task<string> sendBrainTumorImage(Ray ray)
+        {
+            using var httpClient = new HttpClient();
+
+            var formData = MakeFormData(ray);
+
+            var response = await httpClient.PostAsync("http://127.0.0.1:5000/BrainTumor", formData);
+
+            return await GetResponse(response);
+        }
+
+        private async Task<string> sendAlzehimerImage(Ray ray)
+        {
+            using var httpClient = new HttpClient();
+
+            var formData = MakeFormData(ray);
+
+            var response = await httpClient.PostAsync("http://127.0.0.1:5000/BrainAlzhemir", formData);
+
+            return await GetResponse(response);
+        }
+
+        private async Task<string> GetResponse(HttpResponseMessage response)
+        {
             if (response.IsSuccessStatusCode)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();

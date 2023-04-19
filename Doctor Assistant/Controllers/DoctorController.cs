@@ -150,6 +150,7 @@ namespace Doctor_Assistant.Controllers
             TempData["DoctorName"] = null;
             TempData["DoctorDept"] = null;
             TempData["DoctorId"] = null;
+           // TempData["patientImage"] = null;
             HttpContext.Session.SetInt32(DoctorID, -1);
 
             return RedirectToAction("Index", "Home");
