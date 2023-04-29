@@ -95,6 +95,7 @@ def DiabeticRetinoapthy_Preprocessing(image):
     elif (check_retina==False):
         return "Image does not contain the retina."
     else:
+        image=cv2.resize(image, (224, 224))
         return image
 
 
