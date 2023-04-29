@@ -138,8 +138,18 @@ namespace Doctor_Assistant.Controllers
             }
             else
             {
+                new Patient().DeletePatient(dbContext, patientId);
+
                 TempData["rayError"] = "Please Enter Clear Image";
-                return RedirectToAction("Services", "Home");
+
+                if (ray.DiseaseId == 4)
+                    return RedirectToAction("AddNewDiabeticPatient");
+                else if (ray.DiseaseId == 1)
+                    return RedirectToAction("AddNewBrainTumorPatient");
+                else if (ray.DiseaseId == 3)
+                    return RedirectToAction("AddNewAlzehimerPatient");
+                else
+                    return RedirectToAction("Services", "Home");
             }
         }
        

@@ -91,19 +91,89 @@
 
                                     <div class="col">
                                         <label for="WorkType">Work Type</label>
-                                        <input type="text" id="WorkType" class="form-control" value="@Model.stroke.WorkType" asp-for="stroke.WorkType"  />
+                                        
+                                            <select class="form-select" asp-for="stroke.WorkType">
+                                            @if (Model.stroke.WorkType == "children")
+                                            {
+                                                <option selected value="children">Children</option>
+                                                <option value="Govt_jov">Govt_jov</option>
+                                                <option value="Private">Private</option>
+                                                <option value="Self-employed">Self-employed</option>
+                                                <option value="Never_worked">Never Worked</option>
+                                            }
+                                            else if (Model.stroke.WorkType == "Govt_jov")
+                                            {
+                                                <option selected value="Govt_jov">Govt_jov</option>
+                                                <option value="children">Children</option>
+                                                <option value="Private">Private</option>
+                                                <option value="Self-employed">Self-employed</option>
+                                                <option value="Never_worked">Never Worked</option>
+                                            }
+                                            else if (Model.stroke.WorkType == "Private")
+                                            {
+                                                <option selected value="Private">Private</option>
+                                                <option value="children">Children</option>
+                                                <option value="Govt_jov">Govt_jov</option>
+                                                <option value="Self-employed">Self-employed</option>
+                                                <option value="Never_worked">Never Worked</option>
+                                            }
+                                            else if (Model.stroke.WorkType == "Private")
+                                            {
+                                                <option selected value="Self-employed">Self-employed</option>
+                                                <option value="children">Children</option>
+                                                <option value="Govt_jov">Govt_jov</option>
+                                                <option value="Private">Private</option>
+                                                <option value="Never_worked">Never Worked</option>
+                                            }
+                                            else
+                                            {
+                                                <option selected value="Never_worked">Never Worked</option>
+                                                <option value="children">Children</option>
+                                                <option value="Govt_jov">Govt_jov</option>
+                                                <option value="Private">Private</option>
+                                                <option value="Self-employed">Self-employed</option>
+                                            }
+                                            </select>
                                     </div>
 
                                     <div class="col">
                                         <label for="SmokingStatus">Smoking Status</label>
-                                        <input type="text" id="SmokingStatus" class="form-control" value="@Model.stroke.SmokingStatus" asp-for="stroke.SmokingStatus" />
+                                        <select class="form-select" asp-for="stroke.SmokingStatus">
+                                            @if (Model.stroke.SmokingStatus == "formerly smoked")
+                                            {
+                                                <option selected value="formerly smoked">Formerly Smoked</option>
+                                                <option value="never smoked">Never Smoked</option>
+                                                <option value="smokes">Smokes</option>
+                                                <option value="Unknown">Unknown</option>
+                                            }
+                                            else if (Model.stroke.SmokingStatus == "never smoked")
+                                            {
+                                                <option value="formerly smoked">Formerly Smoked</option>
+                                                <option selected value="never smoked">Never Smoked</option>
+                                                <option value="smokes">Smokes</option>
+                                                <option value="Unknown">Unknown</option>
+                                            }else if(Model.stroke.SmokingStatus == "smokes")
+                                            {
+                                                <option value="formerly smoked">Formerly Smoked</option>
+                                                <option  value="never smoked">Never Smoked</option>
+                                                <option selected value="smokes">Smokes</option>
+                                                <option value="Unknown">Unknown</option>
+                                            }else
+                                            {
+                                                <option value="formerly smoked">Formerly Smoked</option>
+                                                <option value="never smoked">Never Smoked</option>
+                                                <option  value="smokes">Smokes</option>
+                                                <option selected value="Unknown">Unknown</option>
+                                            }
+
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col">
                                         <label for="ResidenceType">Residence Type</label>
-                                        <select id="ResidenceType" class="form-control" asp-for="stroke.ResidenceType">
+                                        <select id="ResidenceType" class="form-select" asp-for="stroke.ResidenceType">
                                             @if (Model.stroke.ResidenceType == true)
                                             {
                                                 <option value="True" selected>Urban</option>
@@ -131,7 +201,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="HeartDisease">Has Heart Disease ?</label>
-                                        <select id="HeartDisease" class="form-control" asp-for="stroke.HeartDisease">
+                                        <select id="HeartDisease" class="form-select" asp-for="stroke.HeartDisease">
                                             @if (Model.stroke.HeartDisease == true)
                                             {
                                                 <option value="True" selected>Yes</option>
@@ -147,7 +217,7 @@
 
                                     <div class="col">
                                         <label for="Hypertension">Has Hypertension ?</label>
-                                        <select id="Hypertension" class="form-control" asp-for="stroke.Hypertension" >
+                                        <select id="Hypertension" class="form-select" asp-for="stroke.Hypertension">
                                             @if (Model.stroke.Hypertension == true)
                                             {
                                                 <option value="True" selected>Yes</option>
@@ -164,7 +234,7 @@
                                     <div class="col">
                                         <label for="Hypertension">Is Male ?</label>
 
-                                        <select id="IsMale" class="form-control" asp-for="stroke.IsMale">
+                                        <select id="IsMale" class="form-select" asp-for="stroke.IsMale">
                                             @if (Model.stroke.IsMale == true)
                                             {
                                                 <option value="True" selected>Male</option>
@@ -180,7 +250,7 @@
 
                                     <div class="col">
                                         <label for="IsMarried">Is Married ?</label>
-                                        <select id="IsMarried" class="form-control" asp-for="stroke.IsMarried">
+                                        <select id="IsMarried" class="form-select" asp-for="stroke.IsMarried">
                                             @if (Model.stroke.IsMarried == true)
                                             {
                                                 <option value="True" selected>Yes</option>
@@ -198,7 +268,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <label for="Stroke">Has Stroke ?</label>
-                                        <select id="Stroke" class="form-control" asp-for="stroke.Stroke">
+                                        <select id="Stroke"  class="form-select" asp-for="stroke.Stroke">
                                             @if (Model.stroke.Stroke == true)
                                             {
                                                 <option value="True" selected>Yes</option>
