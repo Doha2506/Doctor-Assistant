@@ -54,9 +54,9 @@ namespace Doctor_Assistant.Models
         {
             return dbContext.rays.Where(x => x.DiseaseId.Equals(diseaseId) && x.doctorId.Equals(doctorId)).ToList();
         }
-        public Ray GetRayByPatientId(DBContext dbContext, int patientId)
+        public Ray GetRayByPatientId(DBContext dbContext, int patientId, int diseaseId)
         {
-            return dbContext.rays.Where(x => x.patientId.Equals(patientId)).First();
+            return dbContext.rays.Where(x => x.patientId.Equals(patientId) && x.DiseaseId.Equals(diseaseId)).First();
         }
 
     }

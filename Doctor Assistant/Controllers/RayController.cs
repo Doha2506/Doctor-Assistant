@@ -68,12 +68,24 @@ namespace Doctor_Assistant.Controllers
             
             setTempVariables();
 
-            Patient patient = new Patient();
-            patient.Email = ray.patientEmail;
-            patient.Name = ray.patientName;
-            new Patient().AddPatient(dbContext, patient);
+            var isPatientExsist =  new Patient().getPatientIdByEmail(dbContext, ray.patientEmail);
 
-           int  patientId = new Patient().getPatientIdByEmail(dbContext, patient.Email);
+            int patientId = -1;
+
+            if (isPatientExsist == -1)
+            {
+                Patient patient = new Patient();
+                patient.Email = ray.patientEmail;
+                patient.Name = ray.patientName;
+                new Patient().AddPatient(dbContext, patient);
+
+                patientId = new Patient().getPatientIdByEmail(dbContext, patient.Email);
+            }
+            else
+            {
+                patientId = isPatientExsist;
+            }
+            
 
             ray = setPateintRay(ray);
 
@@ -121,17 +133,18 @@ namespace Doctor_Assistant.Controllers
                     result = true;
                 }
             }
+            ray.result = output;
 
             if (result == true)
             {
                 new Ray().AddRay(dbContext, ray);
                 await dbContext.SaveChangesAsync();
 
-                int rayId = new Ray().GetRayByPatientId(dbContext, patientId).Id;
+                int rayId = new Ray().GetRayByPatientId(dbContext, patientId, ray.DiseaseId).Id;
 
-                TempData["patientImage"] = "https://localhost:7298/Ray/ShowPatientRay/"+ rayId;
-                TempData["rayPatientName"] = patient.Name;
-                TempData["rayPatientEmail"] = patient.Email;
+                TempData["patientImage"] = "https://localhost:7298/Ray/ShowPatientRay?id=" + rayId + "&diseaseId=" + ray.DiseaseId;
+                TempData["rayPatientName"] = ray.patientName;
+                TempData["rayPatientEmail"] = ray.patientEmail;
                 TempData["rayPatientResult"] = output;
 
                 return RedirectToAction("ShowResult");
@@ -257,10 +270,10 @@ namespace Doctor_Assistant.Controllers
                 return RedirectToAction("login", "Doctor");
         }
 
-        public IActionResult ShowPatientRay(int id)
+        public IActionResult ShowPatientRay(int id, int diseaseId)
         {
             var image = (from m in dbContext.rays
-                         where m.Id == id
+                         where m.Id == id && m.DiseaseId == diseaseId
                          select m.imageDate).FirstOrDefault();
 
             var stream = new MemoryStream(image.ToArray());

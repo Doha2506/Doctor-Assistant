@@ -36,8 +36,11 @@ namespace Doctor_Assistant.Models
 
         public int getPatientIdByEmail(DBContext dbContext, string email)
         {
-            var patient = dbContext.patients.Where(x => x.Email.Equals(email)).First();
-            return patient.Id;
+            var patient = dbContext.patients.SingleOrDefault(x => x.Email.Equals(email));
+            if (patient == null)
+                return -1;
+            else
+                return patient.Id;
 
         }
 

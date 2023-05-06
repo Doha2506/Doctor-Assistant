@@ -36,7 +36,6 @@ namespace Doctor_Assistant.Controllers
             if (!IsEmailExists(doctor))
             {
                 new Doctor().AddDoctor(dbContext, doctor);
-                //_DoctorServices.AddDoctor(dbContext, doctor);
                 return RedirectToAction("login");
             }
             else
@@ -69,7 +68,6 @@ namespace Doctor_Assistant.Controllers
             {
                 TempData["DoctorName"] = new Doctor().GetDoctorNameById(dbContext, id);
                 TempData["DoctorDept"] = new Doctor().GetDoctorDeptById(dbContext, id);
-                TempData["DoctorId"] = id.ToString();
                 TempData["DoctorId"] = id.ToString();
 
                 return true;

@@ -72,14 +72,16 @@
                                             </td>
 
 
-                                            @if (@TempData["DoctorId"] == item.doctorId.ToString())
+                                            @if (@TempData["DoctorId"] == item.doctorId.ToString() || @TempData["DoctorDept"].Equals("Admin"))
                                             {
                                                 <td>
                                                     @Html.ActionLink("", "EditRayPatient","Ray", new {  id=item.Id },new {@class="fas fa-user-edit" , style="color:black"})
                                                     |
                                                     @Html.ActionLink("", "DeleteBrainTumorPatient", "Ray", new {  id=item.Id  }, new {@class="fa fa-trash" , style="color:black"})
                                                     |
-                                                    @Html.ActionLink("", "ShowPatientRay", "Ray", new {  id=item.Id  }, new {@class="far fa-eye" , style="color:black"})
+                                                    @Html.ActionLink("", "ShowPatientRay", "Ray", new {  id=item.Id , diseaseId = item.DiseaseId }, new {@class="far fa-eye" , style="color:black"})
+                                                    |
+                                                    @Html.ActionLink("", "GetPatientReport", "Home", new {  patientEmail=item.patientEmail  }, new {@class="bi bi-clipboard-data-fill" , style="color:black"})
                                                 </td>
                                             }
                                             else

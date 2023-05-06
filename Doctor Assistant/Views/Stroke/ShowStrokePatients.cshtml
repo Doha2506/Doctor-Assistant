@@ -73,8 +73,8 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.stroke.Stroke)
                                                 </td>
-                                           
-                                                @if (@TempData["DoctorId"] == item.stroke.DoctorId.ToString())
+
+                                            @if (@TempData["DoctorId"] == item.stroke.DoctorId.ToString() || @TempData["DoctorDept"].Equals("Admin"))
                                                 {
                                                     <td>
                                                         @Html.ActionLink("", "EditStrokePatient","Stroke",
@@ -85,6 +85,9 @@
 
                                                         @Html.ActionLink("", "DeleteStrokePatient", "Stroke",
                                                             new {  id=item.stroke.Id  }, new {@class="fa fa-trash" , style="color:black"})
+
+                                                    |
+                                                    @Html.ActionLink("", "GetPatientReport", "Home", new {  patientEmail=item.patient.Email  }, new {@class="bi bi-clipboard-data-fill" , style="color:black"})
                                                     </td>
                                                 }
                                                 else
