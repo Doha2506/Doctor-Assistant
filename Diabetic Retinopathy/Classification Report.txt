@@ -2,12 +2,12 @@ Classification Report:
 ----------------------
                  precision    recall  f1-score   support
 
-          Mild       0.88      0.94      0.91       208
-      Moderate       0.89      0.79      0.84       201
-         No_DR       0.96      0.99      0.98       189
-Proliferate_DR       0.94      0.91      0.93       198
-        Severe       0.93      0.97      0.95       207
+          Mild       0.93      0.98      0.95       319
+      Moderate       0.93      0.89      0.91       311
+         No_DR       1.00      0.99      1.00       329
+Proliferate_DR       0.94      0.93      0.93       267
+        Severe       0.94      0.96      0.95       277
 
-      accuracy                           0.92      1003
-     macro avg       0.92      0.92      0.92      1003
-  weighted avg       0.92      0.92      0.92      1003
+      accuracy                           0.95      1503
+     macro avg       0.95      0.95      0.95      1503
+  weighted avg       0.95      0.95      0.95      1503
