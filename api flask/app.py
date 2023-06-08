@@ -95,8 +95,10 @@ def DiabeticRetinoapthy_Preprocessing(image):
     elif (check_retina==False):
         return "Image does not contain the retina."
     else:
-        image=cv2.resize(image, (224, 224))
-        return image
+        sigmaX = 3
+        gaussian = cv2.addWeighted(image, 4, cv2.GaussianBlur(image, (0,0), sigmaX), -4, 128)
+        gaussian = cv2.resize(gaussian, (224, 224))
+        return gaussian
 
 
 
