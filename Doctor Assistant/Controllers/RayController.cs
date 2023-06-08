@@ -29,7 +29,7 @@ namespace Doctor_Assistant.Controllers
         public bool setTempVariables()
         {
             int? id = @HttpContext.Session.GetInt32("_DoctorID");
-            if (id != null)
+            if (id != null && id != -1)
             {
                 TempData["DoctorName"] = new Doctor().GetDoctorNameById(dbContext, id);
                 TempData["DoctorDept"] = new Doctor().GetDoctorDeptById(dbContext, id);
@@ -289,8 +289,8 @@ namespace Doctor_Assistant.Controllers
             Ray patient = new Ray().GetRayById(dbContext, id);
             
             setTempVariables();
-
-            TempData["Image"] = "https://localhost:7298/Ray/ShowPatientRay/"+id;
+            
+            TempData["Image"] = "https://localhost:7298/Ray/ShowPatientRay?id=" + id + "&diseaseId=" + patient.DiseaseId;
 
             return View(patient);
         }

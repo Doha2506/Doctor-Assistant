@@ -64,7 +64,7 @@ namespace Doctor_Assistant.Controllers
         public bool setTempVariables()
         {
             int? id = @HttpContext.Session.GetInt32("_DoctorID");
-            if (id != null)
+            if (id != null && id != -1)
             {
                 TempData["DoctorName"] = new Doctor().GetDoctorNameById(dbContext, id);
                 TempData["DoctorDept"] = new Doctor().GetDoctorDeptById(dbContext, id);
@@ -156,12 +156,15 @@ namespace Doctor_Assistant.Controllers
 
         //--------------- Show All Doctors ---------------
 
-        public IActionResult ShowAllDoctors()
+        public IActionResult ShowDoctors()
         {
             if (setTempVariables())
             {
-               
                 int departmentId = new Department().getIdByName(dbContext, TempData["DoctorDept"].ToString());
+                if(departmentId == 3) // admin
+                {
+                    return View(new Doctor().GetDoctors(dbContext));
+                }
                 return View(new Doctor().ShowAllDoctorsInSameDepartment(dbContext, departmentId));
 
             }
@@ -176,7 +179,7 @@ namespace Doctor_Assistant.Controllers
         {
             setTempVariables();
 
-            if(id == @HttpContext.Session.GetInt32("_DoctorID"))
+            if(id == @HttpContext.Session.GetInt32("_DoctorID") || TempData["DoctorDept"].Equals("Admin"))
             {
                 return View(new Doctor().GetDoctorById(dbContext, id));
 
@@ -184,7 +187,7 @@ namespace Doctor_Assistant.Controllers
             else
             {
                 TempData["VaildateDoctor"] = "You can not edit any doctor except yourself :(";
-                return RedirectToAction("ShowAllDoctors");
+                return RedirectToAction("ShowDoctors");
             }
         }
 
@@ -193,7 +196,9 @@ namespace Doctor_Assistant.Controllers
         {
             new Doctor().UpdateDoctor(dbContext, doctor);
 
-            return RedirectToAction("ShowAllDoctors");
+            TempData.Remove("VaildateDoctor");
+
+            return RedirectToAction("ShowDoctors");
         }
 
         // ---------------- Delete Doctor ----------------------
@@ -208,7 +213,7 @@ namespace Doctor_Assistant.Controllers
             }
             else
             {
-                return RedirectToAction("ShowAllDoctors");
+                return RedirectToAction("ShowDoctors");
             }
 
         }

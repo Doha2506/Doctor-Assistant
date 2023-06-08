@@ -25,7 +25,7 @@ namespace Doctor_Assistant.Controllers
         public bool setTempVariables()
         {
             int? id = @HttpContext.Session.GetInt32("_DoctorID");
-            if (id != null)
+            if (id != null && id != -1)
             {
                 TempData["DoctorName"] = new Doctor().GetDoctorNameById(dbContext, id);
                 TempData["DoctorDept"] = new Doctor().GetDoctorDeptById(dbContext, id);

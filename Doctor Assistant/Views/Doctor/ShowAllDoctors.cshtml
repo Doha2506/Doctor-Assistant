@@ -73,8 +73,35 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Email)
                                                 </td>
+                                            @if(item.deptID == 1)
+                                            {
+                                                <td> Brain</td>
+                                            }
+                                            else if (item.deptID == 2)
+                                            {
+                                                <td> Eye</td>
+                                            }
+                                            else
+                                            {
+                                                <td> Admin</td>
+                                            }
 
-                                                @if (@TempData["DoctorId"] == item.Id.ToString())
+                                            @if (@TempData["DoctorId"] == item.Id.ToString() )
+                                            {
+                                                <td>
+                                                    @Html.ActionLink("", "EditDoctor","Doctor", new {  id=item.Id },new {@class="fas fa-user-edit" , style="color:black"})
+                                                    |
+                                                    @Html.ActionLink("", "DeleteDoctor", "Doctor", new {  id=item.Id  }, new {@class="fa fa-trash" , style="color:black"})
+                                                    
+                                                    
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>ff</td>
+                                            }
+
+                                            @*if (@TempData["DoctorId"] == item.Id.ToString())
                                                 {
                                                     <td>
                                                         @Html.ActionLink("", "EditDoctor","Doctor", new {  id=item.Id },new {@class="fas fa-user-edit" , style="color:black"})
@@ -84,8 +111,8 @@
                                                 }
                                                 else
                                                 {
-                                                    <td></td>
-                                                }
+                                                    <td>ff</td>
+                                                }*@
 
                                             </tr>
                                         }
